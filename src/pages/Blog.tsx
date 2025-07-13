@@ -17,19 +17,19 @@ const Blog = () => {
   return (
     <PageLayout>
       <SEO 
-        title="WRLDS - News and insights about smart textile technology" 
-        description="Stay updated with the latest news and insights about sensor-integrated textiles and smart technology from WRLDS Technologies."
+        title="Tebari Limited - News and insights about plastic recycling and circular economy" 
+        description="Stay updated with the latest news and insights about plastic recycling, waste management, and circular economy solutions from Tebari Limited."
         imageUrl={featuredPost?.imageUrl || "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png"}
-        keywords={['smart textiles', 'textile technology', 'industry news', 'sensor innovation', 'wearable tech', 'smart fabrics']}
+        keywords={['plastic recycling', 'circular economy', 'waste management', 'sustainability', 'blue economy', 'environmental solutions']}
         type="website"
       />
       
-      <div className="w-full pt-24 pb-12 bg-gradient-to-b from-black to-gray-900 text-white">
+      <div className="w-full pt-24 pb-12 bg-gradient-to-b from-tebari-green to-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">WRLDS News &amp; Insights</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Tebari News &amp; Insights</h1>
             <p className="text-xl text-gray-300 mb-6">
-              The latest trends and news in sensor-integrated textiles and smart technology
+              The latest trends and news in plastic recycling, circular economy, and sustainable waste management
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Blog = () => {
             <BlogPostCard 
               key={`placeholder-${index}`}
               title="Upcoming article"
-              excerpt="Stay tuned for more exciting articles about smart textiles and sensor technology."
+              excerpt="Stay tuned for more exciting articles about plastic recycling and circular economy solutions."
               imageUrl={index % 2 === 0 ? "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png" : "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png"}
               date="Coming soon"
               slug="#"

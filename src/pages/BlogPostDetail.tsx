@@ -32,7 +32,7 @@ const BlogPostDetail = () => {
   return (
     <PageLayout>
       <SEO 
-        title={`${post.title} - WRLDS`}
+        title={`${post.title} - Tebari Limited`}
         description={post.metaDescription || post.excerpt}
         imageUrl={post.imageUrl}
         keywords={post.keywords}
@@ -44,7 +44,7 @@ const BlogPostDetail = () => {
       />
       
       <article className="w-full pt-16 pb-16">
-        {/* Hero Section - Taller to accommodate text content */}
+        {/* Hero Section */}
         <div className="banner-container h-96 sm:h-[450px] md:h-[500px] lg:h-[550px] relative">
           {post.imageUrl && (
             <img 
@@ -53,7 +53,7 @@ const BlogPostDetail = () => {
               className="absolute inset-0 w-full h-full object-cover filter grayscale"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/60 to-black/80"></div>
           
           <div className="banner-overlay">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-start md:justify-center">
@@ -63,12 +63,10 @@ const BlogPostDetail = () => {
                   Back to Blog
                 </Link>
                 
-                {/* Mobile-optimized title */}
                 <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight break-words max-w-full">
                   {post.title}
                 </h1>
                 
-                {/* Compact mobile metadata */}
                 <div className="flex flex-col gap-3 text-gray-300 mb-4 sm:mb-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start md:justify-center gap-2 sm:gap-6">
                     <div className="flex items-center text-xs sm:text-base">
@@ -88,7 +86,6 @@ const BlogPostDetail = () => {
                   </div>
                 </div>
                 
-                {/* Mobile-optimized excerpt */}
                 <p className="text-gray-200 text-sm sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
                   {post.excerpt}
                 </p>

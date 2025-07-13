@@ -1,159 +1,176 @@
 
-import { ArrowLeft, ArrowRight, FileText, Code, Cpu } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
-import ProductPlatform from '@/components/ProductPlatform';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { Card, CardContent } from "@/components/ui/card";
-import { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import SEO from '@/components/SEO';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Recycle, Factory, Zap, Shield, Users, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const TechDetails = () => {
-  const isMobile = useIsMobile();
-  const [progressValue, setProgressValue] = useState(0);
+  const technologies = [
+    {
+      icon: <Recycle className="h-8 w-8 text-tebari-green" />,
+      title: "Advanced Sorting Systems",
+      description: "AI-powered optical sorting technology that can identify and separate different types of plastics with 99.5% accuracy, ensuring high-quality recycled materials.",
+      features: ["Automated plastic type identification", "Color sorting capabilities", "Contamination detection", "Real-time quality monitoring"]
+    },
+    {
+      icon: <Factory className="h-8 w-8 text-tebari-green" />,
+      title: "Mechanical Recycling",
+      description: "State-of-the-art mechanical processing that transforms waste plastics into high-quality pellets ready for manufacturing new products.",
+      features: ["Shredding and washing systems", "Melt filtration technology", "Pelletizing equipment", "Quality control testing"]
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-tebari-green" />,
+      title: "Chemical Processing",
+      description: "Advanced chemical recycling methods that break down complex plastics into their molecular components for infinite recyclability.",
+      features: ["Pyrolysis technology", "Depolymerization processes", "Molecular breakdown", "Chemical purification"]
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-tebari-green" />,
+      title: "Quality Assurance",
+      description: "Comprehensive testing and quality control systems ensure all recycled materials meet international standards for safety and performance.",
+      features: ["Material composition analysis", "Strength testing", "Purity verification", "Environmental compliance"]
+    }
+  ];
 
-  // Animate progress bar on component mount
-  useEffect(() => {
-    const timer = setTimeout(() => setProgressValue(100), 100);
-    return () => clearTimeout(timer);
-  }, []);
-  
-  // Scroll to top on mount
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
+  const processSteps = [
+    {
+      step: "01",
+      title: "Collection & Sorting",
+      description: "Waste plastics are collected from communities and sorted using advanced optical technology."
+    },
+    {
+      step: "02",
+      title: "Cleaning & Preparation",
+      description: "Materials undergo thorough cleaning and preparation to remove contaminants and labels."
+    },
+    {
+      step: "03",
+      title: "Processing",
+      description: "Plastics are processed through mechanical or chemical recycling based on material type."
+    },
+    {
+      step: "04",
+      title: "Quality Control",
+      description: "All recycled materials undergo rigorous testing to ensure they meet quality standards."
+    },
+    {
+      step: "05",
+      title: "Product Manufacturing",
+      description: "High-quality recycled materials are transformed into new, sustainable products."
+    }
+  ];
+
   return (
     <PageLayout>
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <Link to="/" className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-6 transition-colors">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-            
-            <motion.h1 initial={{
-            opacity: 0,
-            y: -10
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5
-          }} className="text-3xl sm:text-4xl font-bold mb-6">
-              Technical Deep Dive
+      <SEO 
+        title="Recycling Technology - Tebari Limited"
+        description="Learn about Tebari's advanced plastic recycling technology and processes that transform waste into valuable materials."
+        keywords={['plastic recycling technology', 'waste processing', 'circular economy', 'sustainable manufacturing']}
+      />
+      
+      {/* Hero Section */}
+      <div className="pt-16 pb-16 bg-gradient-to-b from-tebari-green to-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1 
+              className="text-4xl md:text-5xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Advanced Recycling Technology
             </motion.h1>
-            
-            <div className="prose prose-lg max-w-none">
-              <motion.p initial={{
-              opacity: 0
-            }} animate={{
-              opacity: 1
-            }} transition={{
-              duration: 0.5,
-              delay: 0.2
-            }} className="text-base sm:text-lg text-gray-600 mb-12">
-                Explore the technical details behind our smart textile sensor technology and learn how our system architecture enables rapid development and deployment.
-              </motion.p>
-              
-              {/* System Architecture Section */}
-              <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6
-            }} className="mb-16">
-                <div className="flex items-center gap-2 mb-4">
-                  <FileText className="w-5 h-5 text-gray-700" />
-                  <h2 className="text-2xl font-bold">System Architecture</h2>
-                </div>
-                
-                <p className="text-gray-600 mb-8 text-base max-w-3xl">
-                  Our platform uses a three-tier architecture connecting physical devices to our cloud services and user applications. 
-                  The diagram below illustrates how data flows through our system, from sensor collection to user-facing applications.
-                </p>
+            <motion.p 
+              className="text-xl text-gray-200 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Discover how Tebari's innovative technology transforms plastic waste into high-quality, sustainable materials through cutting-edge processing methods.
+            </motion.p>
+          </div>
+        </div>
+      </div>
 
-                {/* Progress bar showing flow */}
-                <div className="w-full mb-6">
-                  
-                  
-                </div>
-                
-                {/* Product Platform Architecture Diagram */}
-                <Card className="bg-white rounded-lg mb-10 border border-gray-200 shadow-sm">
-                  <CardContent className="p-4 lg:p-6">
-                    <ProductPlatform />
+      {/* Technology Overview */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Technology Stack</h2>
+            <p className="text-lg text-gray-600">
+              Tebari employs a comprehensive suite of technologies to maximize recycling efficiency and product quality.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 bg-tebari-green/10 rounded-lg">
+                        {tech.icon}
+                      </div>
+                      <CardTitle className="text-xl">{tech.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-4">{tech.description}</p>
+                    <ul className="space-y-2">
+                      {tech.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-700">
+                          <ArrowRight className="h-4 w-4 text-tebari-green mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </motion.div>
-              
-              {/* Our Approach Section */}
-              <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6,
-              delay: 0.2
-            }}>
-                <div className="flex items-center gap-2 mb-4">
-                  <Code className="w-5 h-5 text-gray-700" />
-                  <h2 className="text-2xl font-bold">Our Approach</h2>
-                </div>
-                
-                <p className="text-gray-600 mb-8 text-base max-w-3xl">
-                  At WRLDS, we've developed a systematic approach to creating smart textile solutions that combines technical innovation with practical implementation. 
-                  Our comprehensive development process ensures that every project moves efficiently from concept to market-ready product.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                  {[{
-                  title: "Discovery",
-                  icon: <Cpu className="w-5 h-5 text-gray-700" />,
-                  description: "We begin with thorough market research and requirements gathering to understand your specific needs and opportunities."
-                }, {
-                  title: "Design & Prototyping",
-                  icon: <Code className="w-5 h-5 text-gray-700" />,
-                  description: "Our teams create initial designs and functional prototypes that allow for early testing and iteration."
-                }, {
-                  title: "Development & Testing",
-                  icon: <FileText className="w-5 h-5 text-gray-700" />,
-                  description: "We rigorously develop and test all components to ensure they meet performance and reliability standards."
-                }].map((phase, i) => <motion.div key={phase.title} initial={{
-                  opacity: 0,
-                  y: 10
-                }} animate={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.4,
-                  delay: 0.3 + i * 0.1
-                }} className="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:shadow-md transition-all duration-300">
-                      <div className="flex items-center gap-2 mb-3">
-                        {phase.icon}
-                        <h3 className="font-semibold text-lg">{phase.title}</h3>
-                      </div>
-                      <p className="text-gray-600 text-base">{phase.description}</p>
-                    </motion.div>)}
-                </div>
-              </motion.div>
-            </div>
-            
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <Link to="/development-process" className="inline-flex items-center px-5 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group">
-                Explore Our Development Process
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Process Flow */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Recycling Process</h2>
+            <p className="text-lg text-gray-600">
+              From waste collection to finished products, every step is optimized for maximum efficiency and quality.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                className="flex items-start mb-8 last:mb-0"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="flex-shrink-0 w-16 h-16 bg-tebari-green text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
+                  {step.step}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
     </PageLayout>
   );
 };
