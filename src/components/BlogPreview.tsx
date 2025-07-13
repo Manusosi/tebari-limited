@@ -1,83 +1,119 @@
 
-import { Link } from 'react-router-dom';
-import { ArrowRight, Newspaper } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import BlogPostCard from '@/components/BlogPostCard';
-import { blogPosts } from '@/data/blogPosts';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BlogPreview = () => {
-  // Get the 3 most recent blog posts
-  const recentPosts = [...blogPosts]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+  const blogPosts = [
+    {
+      id: 1,
+      title: "Circular Plastic Economy: Rethinking Waste Management",
+      excerpt: "Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development.",
+      image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png",
+      date: "December 15, 2024",
+      author: "Tebari Team",
+      slug: "circular-plastic-economy"
+    },
+    {
+      id: 2,
+      title: "Turning Ocean Waste into Opportunity: Innovations in Cleanup",
+      excerpt: "How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products.",
+      image: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
+      date: "December 10, 2024",
+      author: "Tebari Team",
+      slug: "ocean-waste-opportunity"
+    },
+    {
+      id: 3,
+      title: "The Science of Recycling: Converting Plastics into New Materials",
+      excerpt: "Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.",
+      image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
+      date: "December 5, 2024",
+      author: "Tebari Team",
+      slug: "science-of-recycling"
+    }
+  ];
 
   return (
-    <section id="blog" className="py-12 md:py-24 px-4 md:px-12 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <Newspaper size={20} className="text-black" />
-              <span className="text-black font-medium">Our Blog</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Latest Updates</h2>
-            <p className="text-gray-800 max-w-xl">
-              Explore our latest insights on smart textile technology, industry trends, and innovation.
-            </p>
-          </div>
-          <Link to="/blog" className="mt-4 md:mt-0">
-            <Button variant="outline" className="group border-black text-black hover:bg-black hover:text-white">
-              View All Posts
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
-        </div>
-        
-        <div className="relative">
-          <ScrollArea className="w-full">
-            <div className="flex gap-6 pb-4 md:hidden overflow-x-auto snap-x snap-mandatory pl-1">
-              {recentPosts.map((post) => (
-                <div key={post.id} className="flex-none w-[85%] snap-center">
-                  <BlogPostCard
-                    title={post.title}
-                    excerpt={post.excerpt}
-                    imageUrl={post.imageUrl || '/placeholder.svg'}
-                    date={post.date}
-                    slug={post.slug}
-                    category={post.category}
-                  />
-                </div>
-              ))}
-            </div>
-          </ScrollArea>
-          
-          {/* Show grid layout on non-mobile screens */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recentPosts.map((post) => (
-              <BlogPostCard
-                key={post.id}
-                title={post.title}
-                excerpt={post.excerpt}
-                imageUrl={post.imageUrl || '/placeholder.svg'}
-                date={post.date}
-                slug={post.slug}
-                category={post.category}
-              />
-            ))}
-          </div>
-          
-          <div className="mt-4 flex justify-center md:hidden">
-            <div className="flex gap-1">
-              {[0, 1, 2].map((i) => (
-                <div 
-                  key={i} 
-                  className={`h-1.5 rounded-full ${i === 0 ? 'w-6 bg-gray-800' : 'w-2 bg-gray-300'}`}
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Latest Insights
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Stay updated with the latest news and insights about sustainable recycling and circular economy solutions
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {blogPosts.map((post, index) => (
+            <motion.article
+              key={post.id}
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-              ))}
-            </div>
-          </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span>{post.date}</span>
+                  <span className="mx-2">•</span>
+                  <User className="w-4 h-4 mr-2" />
+                  <span>{post.author}</span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  {post.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="inline-flex items-center text-tebari-green hover:text-tebari-green/80 font-medium transition-colors group"
+                >
+                  Read More
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </motion.article>
+          ))}
         </div>
+
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <Link
+            to="/blog"
+            className="inline-flex items-center px-6 py-3 bg-tebari-green text-white rounded-lg hover:bg-tebari-green/90 transition-all group"
+          >
+            View All Articles
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
