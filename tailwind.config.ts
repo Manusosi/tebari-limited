@@ -63,10 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				wrlds: {
-					teal: '#9F9EA1',
-					dark: '#3F3F3F',
+				tebari: {
+					green: '#0C9463',
+					teal: '#1EAE98',
 					light: '#F6F6F7',
+					dark: '#333333',
 					accent: '#C8C8C9',
 					muted: '#F1F1F1'
 				}

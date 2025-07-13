@@ -1,4 +1,5 @@
-import { ArrowRight, Code, Cpu, Layers, MessageSquare } from "lucide-react";
+
+import { ArrowRight, Recycle, Leaf, Users, MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -41,58 +42,59 @@ const Hero = () => {
       });
     }
   };
+
+  const scrollToShop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
   
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container bg-black relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
-        <div className="absolute inset-0 bg-black w-full">
+      <div className="banner-container bg-tebari-green relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
+        <div className="absolute inset-0 bg-tebari-green relative overflow-hidden w-full">
           <video 
             autoPlay 
             loop 
             muted 
             playsInline 
             preload="metadata"
-            className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`}
+            className={`w-full h-full object-cover opacity-70 ${isMobile ? 'object-right' : 'object-center'}`}
             poster="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png"
           >
             <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
-            {/* Fallback image if video fails to load */}
             <img 
               src="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png" 
-              alt="WRLDS Technologies Connected People" 
-              className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`} 
+              alt="Ocean cleanup and plastic recycling" 
+              className={`w-full h-full object-cover opacity-70 ${isMobile ? 'object-right' : 'object-center'}`} 
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/70 to-white"></div>
         </div>
         
         <div className="banner-overlay bg-transparent pt-20 sm:pt-24 md:pt-32 w-full">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
             <motion.div className="w-full max-w-4xl text-center" variants={itemVariants}>
-              <motion.h1 className="banner-title text-white" variants={itemVariants}>The Future of Smart Textile Technology is here.</motion.h1>
-              <motion.p className="banner-subtitle text-gray-300 mt-4 sm:mt-6" variants={itemVariants}>
-                We integrate AI-powered textile sensors into clothing, footwear, and wearables.
+              <motion.h1 className="banner-title text-white" variants={itemVariants}>
+                Transforming Plastic Waste into Sustainable Solutions
+              </motion.h1>
+              <motion.p className="banner-subtitle text-gray-200 mt-4 sm:mt-6" variants={itemVariants}>
+                We aggregate waste plastic and repurpose it into valuable products for a circular economy in Kenya.
               </motion.p>
               <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center" variants={itemVariants}>
-                {/* Styled as a button but using an anchor tag for project navigation */}
                 <button 
-                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                  onClick={e => {
-                    e.preventDefault();
-                    const projectsSection = document.getElementById('projects');
-                    if (projectsSection) {
-                      projectsSection.scrollIntoView({
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
+                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-white text-tebari-green rounded-md hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:shadow-white/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                  onClick={scrollToShop}
                 >
-                  Explore Projects
+                  Browse Shop
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 
-                {/* Using the Button component from shadcn but with custom styling to match the explore button */}
                 <button 
-                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-tebari-teal text-white rounded-md hover:bg-tebari-teal/90 transition-all shadow-lg hover:shadow-xl hover:shadow-tebari-teal/20 flex items-center justify-center group text-sm sm:text-base font-medium"
                   onClick={scrollToContact}
                 >
                   Contact Us
@@ -109,27 +111,27 @@ const Hero = () => {
         delay: 0.6
       }}>
           <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Cpu className="w-5 h-5 md:w-6 md:h-6" />
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-tebari-green/10 flex items-center justify-center rounded-lg text-tebari-green mb-2 md:mb-3">
+              <Recycle className="w-5 h-5 md:w-6 md:h-6" />
             </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Smart Textiles</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Intelligent fabric sensors that seamlessly integrate into clothing and footwear.</p>
+            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Plastic Collection</h3>
+            <p className="text-gray-600 text-xs md:text-sm">Gathering plastic waste from communities and coastlines across Kenya.</p>
           </motion.div>
           
           <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Code className="w-5 h-5 md:w-6 md:h-6" />
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-tebari-teal/10 flex items-center justify-center rounded-lg text-tebari-teal mb-2 md:mb-3">
+              <Leaf className="w-5 h-5 md:w-6 md:h-6" />
             </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Adaptive AI</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Industry-specific algorithms that transform textile sensor data into meaningful insights.</p>
+            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Innovative Recycling</h3>
+            <p className="text-gray-600 text-xs md:text-sm">Advanced sorting and processing technology that transforms waste into resources.</p>
           </motion.div>
           
           <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 flex items-center justify-center rounded-lg text-gray-500 mb-2 md:mb-3">
-              <Layers className="w-5 h-5 md:w-6 md:h-6" />
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 flex items-center justify-center rounded-lg text-green-600 mb-2 md:mb-3">
+              <Users className="w-5 h-5 md:w-6 md:h-6" />
             </div>
-            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Cross-Industry</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Solutions for sports, military, healthcare, industrial, and professional environments.</p>
+            <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Circular Impact</h3>
+            <p className="text-gray-600 text-xs md:text-sm">Building sustainable communities through education, training, and economic empowerment.</p>
           </motion.div>
         </motion.div>
       </div>

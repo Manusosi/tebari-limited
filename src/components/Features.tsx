@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Activity, Shield, HardHat, Zap, ArrowRight, Box, Truck, Code, CheckCircle, Rocket, Factory, Microchip, Handshake, RefreshCcw, MessageSquare } from "lucide-react";
+import { Users, Recycle, Wrench, BookOpen, ArrowRight, Box, Truck, Code, CheckCircle, Rocket, Factory, Microchip, Handshake, RefreshCcw, MessageSquare } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -23,27 +23,27 @@ const Features = () => {
 
   const features = [
     {
-      icon: <Activity className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Sports Performance",
-      description: "Specialized fabrics that analyze form, provide instant feedback, and help prevent injuries in athletic equipment.",
+      icon: <Users className="w-10 h-10 text-white transition-transform duration-300 transform" />,
+      title: "Community Collection",
+      description: "Gathering plastic waste from communities and coastlines through organized collection programs and partnerships.",
       image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
     },
     {
-      icon: <Shield className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Military & Defense",
-      description: "Tactical gear with embedded sensors for soldier health monitoring, environmental awareness, and enhanced safety.",
+      icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
+      title: "Sorting & Processing",
+      description: "Advanced recycling and sorting technology that efficiently processes different types of plastic waste.",
       image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png"
     },
     {
-      icon: <HardHat className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Industrial Safety",
-      description: "Protective workwear that detects hazards, monitors fatigue, and prevents workplace injuries through early intervention.",
+      icon: <Wrench className="w-10 h-10 text-white transition-transform duration-300 transform" />,
+      title: "Product Manufacturing",
+      description: "Transforming sorted plastic waste into valuable new materials and products for various industries.",
       image: "/lovable-uploads/cf8966e3-de0d-445f-9fbd-ee6c48daa7ff.png"
     },
     {
-      icon: <Zap className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Thermal Regulation",
-      description: "Adaptive heating and cooling textiles that respond to body temperature and environmental conditions.",
+      icon: <BookOpen className="w-10 h-10 text-white transition-transform duration-300 transform" />,
+      title: "Education & Impact",
+      description: "Community training and awareness programs that promote sustainable practices and environmental stewardship.",
       image: "/lovable-uploads/6739bd63-bf19-4abd-bb23-0b613bbf7ac8.png"
     }
   ];
@@ -110,29 +110,29 @@ const Features = () => {
 
   const sensorCaseStudies = [{
     image: "/lovable-uploads/843446fe-638e-4efb-b885-ed3cd505325a.png",
-    title: "Firefighter Safety",
-    description: "Advanced protective gear with gas, temperature, positioning, and motion sensors for safer emergency response."
+    title: "Coastal Cleanup Event",
+    description: "Community-driven plastic collection from beaches and coastlines, preventing ocean pollution while gathering raw materials."
   }, {
     image: "/lovable-uploads/5463c9c5-0946-4280-a14b-17636ff69a98.png",
-    title: "Industrial Worker Protection",
-    description: "Safety workwear with vibration, pressure, and heating sensors to prevent injuries and monitor environmental hazards."
+    title: "Recycling Factory Process",
+    description: "Advanced sorting and processing facility that transforms collected plastic waste into high-quality recycled materials."
   }, {
     image: "/lovable-uploads/c5f8ee24-9815-4ebe-b65d-6f3d449feb8b.png",
-    title: "Sports Performance",
-    description: "Smart athletic wear with temperature and pressure sensors that track hydration, foot strike patterns, and performance metrics."
+    title: "Community Workshop",
+    description: "Educational programs that teach sustainable practices and provide economic opportunities through recycling initiatives."
   }];
   const stepFlowItems = [{
-    icon: <Microchip className="h-10 w-10 text-gray-700" />,
-    title: "WRLDS Proprietary Modules",
-    description: "Our core technology components developed in-house"
+    icon: <Microchip className="h-10 w-10 text-tebari-green" />,
+    title: "Collection Network",
+    description: "Our community-based collection system across Kenya"
   }, {
-    icon: <Factory className="h-10 w-10 text-gray-700" />,
-    title: "Vetted Off-the-Shelf Hardware",
-    description: "Carefully selected components that complement our technology"
+    icon: <Factory className="h-10 w-10 text-tebari-green" />,
+    title: "Processing Technology",
+    description: "Advanced sorting and recycling equipment and processes"
   }, {
-    icon: <Handshake className="h-10 w-10 text-gray-700" />,
-    title: "Vetted Production Partners",
-    description: "Expert manufacturing partners for quality and reliability"
+    icon: <Handshake className="h-10 w-10 text-tebari-green" />,
+    title: "Community Partners",
+    description: "Local partnerships for sustainable impact and growth"
   }];
   const sprintPhases = [{
     name: "Planning",
@@ -152,11 +152,11 @@ const Features = () => {
       <section id="features" className="relative bg-white overflow-hidden py-10 md:py-[50px] w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8" ref={featuresRef}> 
           <div className="text-center mb-10 max-w-3xl mx-auto feature-item">
-            <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-              Textile Sensor Applications
+            <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
+              Recycling Solutions
             </div>
             <p className="text-gray-600 mt-4">
-              Our textile sensor technology transforms ordinary fabrics into intelligent interfaces that collect data, monitor conditions, and enhance performance across diverse sectors.
+              Our comprehensive approach transforms plastic waste into valuable resources while building sustainable communities across Kenya.
             </p>
           </div>
           
@@ -277,14 +277,13 @@ const Features = () => {
 
           <div className="mt-16 mb-8 feature-item">
             <div className="text-center mb-8">
-              <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                Textile Sensor Applications
+              <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
+                Real-World Impact
               </div>
-              <h3 className="text-2xl font-bold">Real-World Use Cases</h3>
+              <h3 className="text-2xl font-bold">Our Work in Action</h3>
               <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-                Explore how our textile sensors are applied in different professional contexts, 
-                from emergency response to construction and athletics.
-                <span className="block text-sm mt-1 text-blue-500">Scroll horizontally to see more examples →</span>
+                See how we're making a difference through community engagement, innovative recycling, and sustainable education programs.
+                <span className="block text-sm mt-1 text-tebari-teal">Scroll horizontally to see more examples →</span>
               </p>
             </div>
             
@@ -317,13 +316,13 @@ const Features = () => {
           </div>
         </div>
         <div className="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
+          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-tebari-green hover:bg-tebari-green/90 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
             Need Custom Solutions?
             <MessageSquare className="ml-2 w-4 h-4 group-hover:animate-pulse" />
           </Button>
           
-          <Button onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 py-3 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all group w-full sm:w-auto">
-            Learn More About Our Technology
+          <Button onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 py-3 bg-white text-tebari-green rounded-lg border border-tebari-green hover:bg-tebari-green/5 hover:shadow-md transition-all group w-full sm:w-auto">
+            Learn More About Our Process
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
@@ -332,13 +331,12 @@ const Features = () => {
       <section id="technology" className="bg-gray-50 py-10 md:py-16">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-              Our Approach
+            <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
+              Our Process
             </div>
-            <h2 className="text-3xl font-bold mb-4">How our technology works</h2>
+            <h2 className="text-3xl font-bold mb-4">Collect → Transform → Repurpose</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              WRLDS builds hardware and software with proprietary and off-the-shelf modules, 
-              allowing us to develop completely unique solutions at high speed and lower risk.
+              Tebari's three-step process combines community engagement, advanced technology, and sustainable manufacturing to create a complete circular economy solution.
             </p>
           </div>
           
@@ -469,13 +467,13 @@ const Features = () => {
           
           <div className="text-center">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Link to="/tech-details" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all group py-3 w-full sm:w-auto justify-center">
+              <Link to="/technology-details" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 bg-white text-tebari-green rounded-lg border border-tebari-green hover:bg-tebari-green/5 hover:shadow-md transition-all group py-3 w-full sm:w-auto justify-center">
                 Learn More About Our Technology
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
-                Contact Our Experts
+              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-tebari-green hover:bg-tebari-green/90 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
+                Contact Our Team
                 <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
