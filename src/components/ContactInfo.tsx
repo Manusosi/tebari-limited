@@ -23,7 +23,7 @@ const ContactInfo = () => {
           <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
             <div className="flex flex-col items-center text-center">
               <img 
-                src="/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                 alt="Linus Owino"
                 className="w-32 h-32 rounded-full mb-4 object-cover"
               />
@@ -51,7 +51,7 @@ const ContactInfo = () => {
           <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
             <div className="flex flex-col items-center text-center">
               <img 
-                src="/lovable-uploads/a9bb9110-964a-43b0-a5ab-7162140cd133.png"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                 alt="Nicholas Okeyo"
                 className="w-32 h-32 rounded-full mb-4 object-cover"
               />

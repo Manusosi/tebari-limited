@@ -134,14 +134,14 @@ const About = () => {
                       role: "Founder & CEO",
                       bio: "Leading Tebari's mission to transform plastic waste into sustainable solutions across Kenya.",
                       email: "linus@tebari.net",
-                      image: "/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png"
+                      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     },
                     {
                       name: "Nicholas Okeyo",
                       role: "Co-Founder & COO",
                       bio: "Overseeing operations and community partnerships to ensure sustainable impact and growth.",
                       email: "nick@tebari.net",
-                      image: "/lovable-uploads/e502f601-c519-43a8-86f5-5fa89ae50d2f.png"
+                      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     }
                   ].map((member, i) => (
                     <Card key={i} className="bg-gray-50 border border-gray-100 overflow-hidden">
