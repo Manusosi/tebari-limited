@@ -1,143 +1,141 @@
 
-import { ArrowRight, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, MapPin, Mail, Phone, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
+import { toast } from "sonner";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!email) {
-      toast({
-        title: "Error",
-        description: "Please enter your email address.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
+    if (!email) return;
+
     setIsSubmitting(true);
-    
     try {
-      // EmailJS configuration
-      const EMAILJS_SERVICE_ID = "service_i3h66xg";
-      const EMAILJS_TEMPLATE_ID = "template_fgq53nh";
-      const EMAILJS_PUBLIC_KEY = "wQmcZvoOqTAhGnRZ3";
-      
-      const templateParams = {
-        from_name: "Newsletter Subscriber",
-        from_email: email,
-        message: `New newsletter subscription from the Tebari website.`,
-        to_name: 'Tebari Team',
-        reply_to: email
-      };
-      
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
+        'service_your_service_id',
+        'template_newsletter',
+        {
+          email: email,
+          message: `Newsletter subscription from: ${email}`,
+        },
+        'your_public_key'
       );
-      
-      toast({
-        title: "Success!",
-        description: "Thank you for subscribing to our newsletter.",
-        variant: "default"
-      });
-      
+      toast.success("Thank you for subscribing to our newsletter!");
       setEmail("");
     } catch (error) {
-      console.error("Error sending subscription:", error);
-      
-      toast({
-        title: "Error",
-        description: "There was a problem subscribing. Please try again later.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
+      toast.error("Failed to subscribe. Please try again.");
     }
+    setIsSubmitting(false);
   };
 
   return (
-    <footer id="contact" className="bg-tebari-green text-white pt-16 pb-8 w-full">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 pb-10 border-b border-white/20">
-          <div className="lg:col-span-2">
-            <img 
-              src="/lovable-uploads/7d120ee6-3614-4b75-9c35-716d54490d67.png" 
-              alt="Tebari Limited Logo" 
-              className="h-10 w-auto mb-6 brightness-0 invert"
-            />
-            <p className="text-gray-200 mb-6">
-              Tebari Limited is pioneering sustainable recycling solutions in Kenya, transforming plastic waste into valuable products while building circular economy communities.
+    <footer id="contact" className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold mb-4 text-tebari-green">TEBARI</h3>
+            <p className="text-gray-300 mb-4 leading-relaxed">
+              Tebari is pioneering sustainable plastic recycling solutions in Kenya, transforming waste into valuable products while building circular economy communities.
             </p>
-            <p className="text-gray-200 mb-6">
-              P.O. Box 940-80108<br />
-              Kilifi, Kenya 80108
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-gray-200 transition-colors hover:bg-white/30 hover:text-white"
-              >
-                <Linkedin size={20} />
-              </a>
+            <div className="flex items-start space-x-2 text-gray-300">
+              <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+              <span className="text-sm">P.O. Box 940-80108, Kilifi, Kenya</span>
             </div>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Company</h3>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-gray-200 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/careers" className="text-gray-200 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-200 hover:text-white transition-colors">Privacy Policy</Link></li>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects/ocean-cleanup" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  Our Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
-          
+
+          {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Stay Updated</h3>
-            <form className="space-y-4" onSubmit={handleSubscribe}>
-              <div>
-                <input 
-                  type="email" 
-                  placeholder="Your email" 
-                  className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={isSubmitting}
-                />
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-5 h-5" />
+                <a href="mailto:info@tebari.net" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  info@tebari.net
+                </a>
               </div>
-              <button 
-                type="submit" 
-                className="w-full px-4 py-2 bg-white/20 text-white rounded-md hover:bg-white/30 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+              <div className="flex items-center space-x-2">
+                <Linkedin className="w-5 h-5" />
+                <a href="https://linkedin.com/company/tebari" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tebari-green transition-colors">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+            <p className="text-gray-300 mb-4 text-sm">
+              Stay updated with our latest recycling innovations and projects.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-tebari-green"
+                required
+              />
+              <button
+                type="submit"
                 disabled={isSubmitting}
+                className="w-full px-4 py-2 bg-tebari-green text-white rounded-md hover:bg-tebari-green/90 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50"
               >
-                {isSubmitting ? "Subscribing..." : (
-                  <>
-                    Subscribe
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </>
-                )}
+                <span>{isSubmitting ? "Subscribing..." : "Subscribe"}</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </form>
           </div>
         </div>
-        
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Tebari Limited. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            <Link to="/privacy-policy" className="text-sm text-gray-300 hover:text-white transition-colors">Privacy Policy</Link>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-gray-400">
+              <Link to="/privacy-policy" className="hover:text-tebari-green transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-tebari-green transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+            <div className="text-sm text-gray-400">
+              © 2025 Tebari Limited. All rights reserved.
+            </div>
           </div>
         </div>
       </div>

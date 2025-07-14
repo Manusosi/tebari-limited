@@ -48,8 +48,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
-              <img src="/lovable-uploads/7d120ee6-3614-4b75-9c35-716d54490d67.png" alt="Tebari Limited Logo" className={cn("h-8 w-auto", isScrolled ? "" : "brightness-0 invert")} />
-              <span className={cn("text-2xl font-bold transition-colors", isScrolled ? "text-tebari-green" : "text-white")}>
+              <span className={cn("text-3xl font-bold transition-colors", isScrolled ? "text-tebari-green" : "text-white")}>
                 TEBARI
               </span>
             </Link>

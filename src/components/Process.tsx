@@ -5,29 +5,29 @@ import { Check } from "lucide-react";
 
 const processes = [{
   id: 1,
-  title: "Textile Sensor Design",
-  description: "We begin by designing custom textile sensors specifically for your industry and use case, selecting appropriate conductive materials and sensor types.",
-  steps: ["Industry-specific requirement analysis", "Sensor type and material selection", "Prototype sensor development", "Initial testing and calibration"]
+  title: "Waste Assessment & Collection Design",
+  description: "We begin by analyzing local plastic waste streams and designing efficient collection systems tailored to specific communities and coastal areas.",
+  steps: ["Community waste stream analysis", "Collection point optimization", "Local partnership development", "Initial pilot program setup"]
 }, {
   id: 2,
-  title: "Garment Integration",
-  description: "Our engineering team seamlessly integrates sensors into clothing and footwear while maintaining comfort, durability, and washability.",
-  steps: ["Ergonomic placement optimization", "Non-intrusive integration techniques", "Durability and washability testing", "Comfort and user experience validation"]
+  title: "Sorting & Processing Integration",
+  description: "Our engineering team develops and integrates advanced sorting technology to efficiently separate different plastic types while maintaining quality standards.",
+  steps: ["Plastic type identification systems", "Automated sorting technology", "Quality control processes", "Processing efficiency optimization"]
 }, {
   id: 3,
-  title: "AI & Data Analytics",
-  description: "We develop specialized algorithms that transform textile sensor data into actionable insights unique to your industry requirements.",
-  steps: ["Industry-specific algorithm development", "ML model training with domain data", "Real-time analytics implementation", "Insight delivery optimization"]
+  title: "Product Development & Innovation",
+  description: "We develop innovative products from recycled plastics, creating valuable materials that meet market demands while supporting circular economy principles.",
+  steps: ["Market demand analysis", "Product design and prototyping", "Material testing and validation", "Manufacturing process optimization"]
 }, {
   id: 4,
-  title: "Production & Certification",
-  description: "We handle manufacturing, quality control, and ensure all textile sensor products meet relevant industry standards and certifications.",
-  steps: ["Textile manufacturing partner selection", "Quality assurance processes", "Industry-specific certification procurement", "Initial production supervision"]
+  title: "Production & Quality Assurance",
+  description: "We establish scalable production systems with rigorous quality control to ensure our recycled products meet industry standards and customer expectations.",
+  steps: ["Production facility setup", "Quality assurance protocols", "Industry certification compliance", "Supply chain optimization"]
 }, {
   id: 5,
-  title: "Deployment & Support",
-  description: "We provide comprehensive training, implementation assistance, and ongoing support to ensure successful adoption and continuous improvement.",
-  steps: ["User training and onboarding", "Data interpretation guidance", "Performance monitoring", "Continuous improvement iterations"]
+  title: "Community Impact & Support",
+  description: "We provide comprehensive training, create employment opportunities, and establish ongoing support systems to ensure sustainable community development.",
+  steps: ["Community training programs", "Employment creation initiatives", "Impact monitoring systems", "Continuous improvement programs"]
 }];
 
 const Process = () => {
@@ -98,7 +98,7 @@ const Process = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Development Process</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We follow a structured approach to developing textile sensor solutions that ensures quality, reliability, and performance.
+            We follow a structured approach to developing plastic recycling solutions that ensures environmental impact, community empowerment, and sustainable economic growth.
           </p>
         </div>
         
@@ -117,7 +117,7 @@ const Process = () => {
                   className={cn(
                     "w-full text-left p-4 rounded-lg transition-all",
                     activeProcess === process.id
-                      ? "bg-gray-100 shadow-sm"
+                      ? "bg-tebari-green/10 shadow-sm border border-tebari-green/20"
                       : "hover:bg-gray-50"
                   )}
                 >
@@ -125,7 +125,7 @@ const Process = () => {
                     <div className={cn(
                       "w-8 h-8 rounded-full flex items-center justify-center mr-3 transition-all",
                       activeProcess === process.id
-                        ? "bg-blue-100 text-blue-700"
+                        ? "bg-tebari-green text-white"
                         : "bg-gray-100 text-gray-500"
                     )}>
                       {activeProcess > process.id ? (
@@ -136,7 +136,7 @@ const Process = () => {
                     </div>
                     <span className={cn(
                       "font-medium",
-                      activeProcess === process.id ? "text-gray-900" : "text-gray-600"
+                      activeProcess === process.id ? "text-tebari-green" : "text-gray-600"
                     )}>
                       {process.title}
                     </span>
@@ -156,17 +156,17 @@ const Process = () => {
                   className="scroll-mt-24 transition-all duration-500"
                   ref={el => processSectionsRef.current[process.id - 1] = el}
                 >
-                  <h3 className="text-2xl font-bold mb-4">{process.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{process.title}</h3>
                   <p className="text-gray-700 mb-6">{process.description}</p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {process.steps.map((step, idx) => (
                       <div key={idx} className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                         <div className="flex items-center">
-                          <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-3 text-sm">
+                          <div className="w-6 h-6 rounded-full bg-tebari-green text-white flex items-center justify-center mr-3 text-sm">
                             {idx + 1}
                           </div>
-                          <span>{step}</span>
+                          <span className="text-gray-800">{step}</span>
                         </div>
                       </div>
                     ))}
