@@ -1,10 +1,29 @@
 
+export interface ContentSection {
+  type: 'heading' | 'subheading' | 'paragraph' | 'list' | 'icon-list' | 'bibliography' | 'stats' | 'chart' | 'table' | 'quote';
+  content?: string;
+  items?: string[];
+  statsData?: {
+    icon: string;
+    value: string;
+    label: string;
+  }[];
+  chartData?: {
+    title: string;
+    data: { name: string; value: number }[];
+  };
+  tableData?: {
+    headers: string[];
+    rows: string[][];
+  };
+}
+
 export interface BlogPost {
   id: string;
   title: string;
   slug: string;
   excerpt: string;
-  content: string;
+  content: ContentSection[];
   author: string;
   date: string;
   category: string;
@@ -19,45 +38,45 @@ export const blogPosts: BlogPost[] = [
     title: 'Circular Plastic Economy: Rethinking Waste Management',
     slug: 'circular-plastic-economy',
     excerpt: 'Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development in Kenya.',
-    content: `
-# Circular Plastic Economy: Rethinking Waste Management
-
-The concept of a circular economy is revolutionizing how we approach plastic waste management. Instead of the traditional linear model of "take-make-dispose," circular economy principles create closed-loop systems where waste becomes a valuable input for new products.
-
-## The Problem with Linear Plastic Economy
-
-Kenya, like many developing countries, faces significant challenges with plastic waste management. With over 500 million plastic bags entering the waste stream annually, the traditional approach of disposal in landfills or burning has created environmental and health crises.
-
-## Tebari's Circular Approach
-
-At Tebari, we've reimagined plastic waste as a valuable resource. Our circular economy model includes:
-
-### 1. Community Collection Networks
-We work directly with coastal communities to establish collection points where plastic waste is gathered, sorted, and prepared for processing.
-
-### 2. Advanced Processing Technology
-Our sorting and processing facilities transform various types of plastic waste into high-quality raw materials for manufacturing.
-
-### 3. Product Innovation
-We develop new products from recycled plastics, including construction materials, textiles, and packaging solutions.
-
-### 4. Community Empowerment
-Our model creates employment opportunities and provides training to community members, ensuring sustainable economic benefits.
-
-## Impact and Results
-
-Since implementing our circular economy approach, we've:
-- Collected over 50 tons of plastic waste from coastal areas
-- Created 200+ direct and indirect employment opportunities
-- Developed 15 different product lines from recycled materials
-- Reduced CO₂ emissions by an estimated 120 tons annually
-
-## The Future of Circular Plastic Economy
-
-The transition to a circular plastic economy requires collaboration between government, businesses, and communities. At Tebari, we're committed to leading this transformation in Kenya and across East Africa.
-
-*Ready to join the circular economy revolution? Contact us to learn how your community or business can participate in our sustainable plastic recycling programs.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'The Problem with Linear Plastic Economy'
+      },
+      {
+        type: 'paragraph',
+        content: 'Kenya, like many developing countries, faces significant challenges with plastic waste management. With over 500 million plastic bags entering the waste stream annually, the traditional approach of disposal in landfills or burning has created environmental and health crises.'
+      },
+      {
+        type: 'heading',
+        content: 'Tebari\'s Circular Approach'
+      },
+      {
+        type: 'paragraph',
+        content: 'At Tebari, we\'ve reimagined plastic waste as a valuable resource. Our circular economy model includes:'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Community Collection Networks: We work directly with coastal communities to establish collection points where plastic waste is gathered, sorted, and prepared for processing.',
+          'Advanced Processing Technology: Our sorting and processing facilities transform various types of plastic waste into high-quality raw materials for manufacturing.',
+          'Product Innovation: We develop new products from recycled plastics, including construction materials, textiles, and packaging solutions.',
+          'Community Empowerment: Our model creates employment opportunities and provides training to community members, ensuring sustainable economic benefits.'
+        ]
+      },
+      {
+        type: 'stats',
+        statsData: [
+          { icon: 'TrendingUp', value: '50+', label: 'Tons of Plastic Collected' },
+          { icon: 'Users', value: '200+', label: 'Jobs Created' },
+          { icon: 'DollarSign', value: '120', label: 'Tons CO₂ Reduced Annually' }
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'The transition to a circular plastic economy requires collaboration between government, businesses, and communities. At Tebari, we\'re committed to leading this transformation in Kenya and across East Africa.'
+      }
+    ],
     author: 'Tebari Team',
     date: 'December 15, 2024',
     category: 'Circular Economy',
@@ -70,62 +89,44 @@ The transition to a circular plastic economy requires collaboration between gove
     title: 'Turning Ocean Waste into Opportunity: Innovations in Cleanup',
     slug: 'ocean-waste-opportunity',
     excerpt: 'How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products along Kenya\'s coastline.',
-    content: `
-# Turning Ocean Waste into Opportunity: Innovations in Cleanup
-
-Kenya's coastline stretches over 600 kilometers along the Indian Ocean, making it both a valuable natural resource and a collection point for marine plastic debris. At Tebari, we've developed innovative approaches to turn this environmental challenge into economic opportunity.
-
-## The Scale of Ocean Plastic Pollution
-
-Marine plastic pollution affects Kenya's coastal ecosystems, fisheries, and tourism industry. Every year, millions of tons of plastic waste enter our oceans, with significant portions washing up on our beaches.
-
-## Tebari's Ocean Cleanup Initiative
-
-Our comprehensive ocean cleanup program combines technology, community engagement, and sustainable business practices:
-
-### Beach Cleanup Operations
-Regular organized cleanups involving local communities, schools, and volunteer groups. We've collected over 25 tons of plastic waste from beaches in Kilifi County alone.
-
-### At-Sea Collection Systems
-We've partnered with local fishing communities to collect plastic waste during their regular fishing activities, providing additional income streams for fishermen.
-
-### Smart Sorting Technology
-Our mobile sorting units can process collected ocean plastics on-site, separating materials by type and quality for optimal recycling outcomes.
-
-## Converting Ocean Plastic to Products
-
-The plastic we collect from ocean cleanup operations is transformed into various products:
-
-- **Construction Materials**: Ocean plastic is processed into durable building blocks and roofing materials
-- **Textile Fibers**: Clean plastic bottles become high-quality synthetic fibers for clothing and textiles
-- **Packaging Solutions**: Food-grade ocean plastic is recycled into new packaging materials
-
-## Community Impact
-
-Our ocean cleanup initiative has created:
-- 150+ coastal community jobs
-- Training programs for 500+ individuals
-- Cleaner beaches supporting tourism recovery
-- Reduced marine ecosystem damage
-
-## Technology Innovation
-
-We continue to invest in new technologies for ocean plastic collection and processing:
-- Drone monitoring of plastic accumulation zones
-- Improved sorting algorithms for contaminated materials
-- Mobile processing units for remote coastal areas
-
-## Measuring Success
-
-Our impact metrics include:
-- Plastic waste collected (tons per month)
-- Beach cleanup area covered (kilometers)
-- Community members trained and employed
-- Products manufactured from ocean plastic
-- CO₂ emissions reduced through recycling
-
-*Join our ocean cleanup efforts by participating in community cleanup events or supporting our sustainable products made from ocean plastic.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'The Scale of Ocean Plastic Pollution'
+      },
+      {
+        type: 'paragraph',
+        content: 'Marine plastic pollution affects Kenya\'s coastal ecosystems, fisheries, and tourism industry. Every year, millions of tons of plastic waste enter our oceans, with significant portions washing up on our beaches.'
+      },
+      {
+        type: 'heading',
+        content: 'Tebari\'s Ocean Cleanup Initiative'
+      },
+      {
+        type: 'paragraph',
+        content: 'Our comprehensive ocean cleanup program combines technology, community engagement, and sustainable business practices:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Beach Cleanup Operations: Regular organized cleanups involving local communities, schools, and volunteer groups.',
+          'At-Sea Collection Systems: Partnering with local fishing communities to collect plastic waste during fishing activities.',
+          'Smart Sorting Technology: Mobile sorting units that process collected ocean plastics on-site.'
+        ]
+      },
+      {
+        type: 'stats',
+        statsData: [
+          { icon: 'Shield', value: '25+', label: 'Tons Collected from Beaches' },
+          { icon: 'Users', value: '150+', label: 'Coastal Community Jobs' },
+          { icon: 'TrendingUp', value: '500+', label: 'Individuals Trained' }
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'Join our ocean cleanup efforts by participating in community cleanup events or supporting our sustainable products made from ocean plastic.'
+      }
+    ],
     author: 'Tebari Team',
     date: 'December 10, 2024',
     category: 'Ocean Cleanup',
@@ -138,96 +139,48 @@ Our impact metrics include:
     title: 'The Science of Recycling: Converting Plastics into New Materials',
     slug: 'science-of-recycling',
     excerpt: 'Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.',
-    content: `
-# The Science of Recycling: Converting Plastics into New Materials
-
-Understanding the science behind plastic recycling is crucial for developing effective circular economy solutions. At Tebari, we employ advanced scientific processes to transform waste plastics into valuable new materials.
-
-## Types of Plastic and Their Properties
-
-Different plastic types require different recycling approaches:
-
-### PET (Polyethylene Terephthalate)
-- Common in: Bottles, food containers
-- Recycling process: Chemical washing, melting, pelletizing
-- New applications: Textiles, carpets, new bottles
-
-### HDPE (High-Density Polyethylene)
-- Common in: Milk jugs, detergent bottles
-- Recycling process: Shredding, washing, melting
-- New applications: Pipes, lumber, playground equipment
-
-### PP (Polypropylene)
-- Common in: Food containers, bottle caps
-- Recycling process: Sorting, cleaning, re-melting
-- New applications: Automotive parts, textiles, containers
-
-## Tebari's Processing Technology
-
-Our recycling facility employs several scientific processes:
-
-### 1. Advanced Sorting
-- Optical sorting using near-infrared spectroscopy
-- Density separation for different plastic types
-- Color sorting for quality control
-
-### 2. Contamination Removal
-- Hot washing with specialized detergents
-- Flotation separation for removing labels
-- Centrifugal drying for moisture removal
-
-### 3. Mechanical Processing
-- Shredding into uniform flakes
-- Melting at precisely controlled temperatures
-- Pelletizing for manufacturing applications
-
-### 4. Quality Control
-- Melt flow index testing
-- Contamination level analysis
-- Color consistency verification
-
-## Chemical vs. Mechanical Recycling
-
-We utilize both approaches depending on the material:
-
-**Mechanical Recycling:**
-- Physical processing without changing chemical structure
-- Suitable for clean, single-type plastics
-- Lower energy requirements
-- Maintains most original properties
-
-**Chemical Recycling:**
-- Breaks down plastics to molecular level
-- Can handle mixed or contaminated plastics
-- Higher energy requirements
-- Can restore original plastic properties
-
-## Innovation in Processing
-
-Our R&D efforts focus on:
-- Improving sorting accuracy to 99.5%
-- Reducing energy consumption by 30%
-- Developing new applications for recycled materials
-- Creating hybrid materials with enhanced properties
-
-## Quality Standards
-
-All our recycled materials meet or exceed:
-- ISO 14855 standards for biodegradability
-- ASTM D6400 composting standards
-- FDA regulations for food-contact materials
-- Local building codes for construction applications
-
-## Environmental Benefits
-
-Our scientific approach to recycling delivers:
-- 60% reduction in energy use vs. virgin plastic production
-- 80% reduction in CO₂ emissions
-- 95% reduction in water consumption
-- Zero waste to landfill policy
-
-*Interested in the technical specifications of our recycled materials? Contact our technical team for detailed material data sheets and testing reports.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'Types of Plastic and Their Properties'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different plastic types require different recycling approaches:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Plastic Type', 'Common Uses', 'Recycling Process', 'New Applications'],
+          rows: [
+            ['PET', 'Bottles, food containers', 'Chemical washing, melting', 'Textiles, carpets, new bottles'],
+            ['HDPE', 'Milk jugs, detergent bottles', 'Shredding, washing, melting', 'Pipes, lumber, playground equipment'],
+            ['PP', 'Food containers, bottle caps', 'Sorting, cleaning, re-melting', 'Automotive parts, textiles']
+          ]
+        }
+      },
+      {
+        type: 'heading',
+        content: 'Tebari\'s Processing Technology'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Advanced Sorting: Optical sorting using near-infrared spectroscopy and density separation for different plastic types.',
+          'Contamination Removal: Hot washing with specialized detergents and flotation separation for removing labels.',
+          'Mechanical Processing: Shredding into uniform flakes, melting at precisely controlled temperatures.',
+          'Quality Control: Melt flow index testing, contamination level analysis, and color consistency verification.'
+        ]
+      },
+      {
+        type: 'stats',
+        statsData: [
+          { icon: 'Zap', value: '60%', label: 'Energy Reduction vs Virgin Plastic' },
+          { icon: 'Shield', value: '80%', label: 'CO₂ Emissions Reduction' },
+          { icon: 'Database', value: '95%', label: 'Water Consumption Reduction' }
+        ]
+      }
+    ],
     author: 'Tebari Team',
     date: 'December 5, 2024',
     category: 'Technology',
@@ -240,55 +193,45 @@ Our scientific approach to recycling delivers:
     title: 'Recycling Technology in Industry: A Strategic Approach',
     slug: 'recycling-technology-industry',
     excerpt: 'How advanced recycling technologies are transforming industrial waste management and creating new business opportunities in Kenya.',
-    content: `
-# Recycling Technology in Industry: A Strategic Approach
-
-The integration of advanced recycling technologies in industrial settings is revolutionizing waste management practices across Kenya. Tebari's strategic approach to industrial recycling technology demonstrates how businesses can transform waste streams into valuable resources.
-
-## The Industrial Waste Challenge
-
-Kenyan industries generate thousands of tons of plastic waste annually. Traditional disposal methods are not only environmentally harmful but also represent missed economic opportunities.
-
-## Strategic Technology Implementation
-
-### Assessment and Planning
-- Comprehensive waste stream analysis
-- Technology selection based on waste types
-- ROI calculations for recycling investments
-- Integration planning with existing operations
-
-### Technology Solutions
-- Automated sorting systems for mixed waste streams
-- In-line quality control using AI and machine learning
-- Real-time monitoring and reporting systems
-- Scalable processing equipment for growing operations
-
-## Industry Applications
-
-### Manufacturing Sector
-We've helped manufacturing companies:
-- Reduce waste disposal costs by 70%
-- Create new revenue streams from waste materials
-- Meet environmental compliance requirements
-- Improve corporate sustainability metrics
-
-### Construction Industry
-Our recycling technologies enable:
-- On-site processing of construction plastic waste
-- Production of recycled building materials
-- Reduced material costs through circular practices
-- LEED certification support for green buildings
-
-## Economic Impact
-
-Industrial recycling technology delivers:
-- Reduced operational costs
-- New revenue generation
-- Tax incentives and grants
-- Improved supply chain resilience
-
-*Ready to implement recycling technology in your industry? Contact us for a comprehensive waste assessment and technology recommendation.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'The Industrial Waste Challenge'
+      },
+      {
+        type: 'paragraph',
+        content: 'Kenyan industries generate thousands of tons of plastic waste annually. Traditional disposal methods are not only environmentally harmful but also represent missed economic opportunities.'
+      },
+      {
+        type: 'heading',
+        content: 'Strategic Technology Implementation'
+      },
+      {
+        type: 'list',
+        items: [
+          'Comprehensive waste stream analysis and technology selection based on waste types',
+          'ROI calculations for recycling investments and integration planning with existing operations',
+          'Automated sorting systems for mixed waste streams with AI and machine learning',
+          'Real-time monitoring and reporting systems with scalable processing equipment'
+        ]
+      },
+      {
+        type: 'chart',
+        chartData: {
+          title: 'Industrial Recycling Impact',
+          data: [
+            { name: 'Cost Reduction', value: 70 },
+            { name: 'Revenue Generation', value: 45 },
+            { name: 'Compliance Improvement', value: 90 },
+            { name: 'Sustainability Metrics', value: 85 }
+          ]
+        }
+      },
+      {
+        type: 'quote',
+        content: 'Ready to implement recycling technology in your industry? Contact us for a comprehensive waste assessment and technology recommendation.'
+      }
+    ],
     author: 'Tebari Team',
     date: 'November 28, 2024',
     category: 'Industry Solutions',
@@ -301,110 +244,42 @@ Industrial recycling technology delivers:
     title: 'From Plastic Waste to Products: Our Sustainable Development Process',
     slug: 'plastic-waste-to-products',
     excerpt: 'A detailed look at Tebari\'s comprehensive process for transforming plastic waste into valuable products while supporting community development.',
-    content: `
-# From Plastic Waste to Products: Our Sustainable Development Process
-
-At Tebari, we've developed a comprehensive five-stage process that transforms plastic waste into valuable products while creating sustainable economic opportunities for communities across Kenya.
-
-## Stage 1: Waste Assessment & Collection Design
-
-Our process begins with thorough analysis of local waste streams:
-
-### Community Engagement
-- Partnering with local leaders and organizations
-- Understanding existing waste management practices
-- Identifying collection opportunities and challenges
-- Building trust and awareness about recycling benefits
-
-### Collection System Design
-- Mapping optimal collection point locations
-- Designing efficient transportation routes
-- Training community collectors
-- Establishing quality standards for collected materials
-
-## Stage 2: Sorting & Processing Integration
-
-Advanced technology meets community needs:
-
-### Sorting Technology
-- Optical sorting for different plastic types
-- Contamination detection and removal
-- Quality grading systems
-- Automated handling to reduce labor costs
-
-### Processing Integration
-- Mobile processing units for remote areas
-- Community-based processing centers
-- Technology training for local operators
-- Maintenance and support systems
-
-## Stage 3: Product Development & Innovation
-
-Creating market-relevant products from recycled materials:
-
-### Market Research
-- Identifying high-demand products
-- Understanding customer requirements
-- Analyzing competitive landscape
-- Developing pricing strategies
-
-### Product Design
-- Engineering products for durability and performance
-- Testing prototypes with end users
-- Optimizing manufacturing processes
-- Ensuring quality standards compliance
-
-## Stage 4: Production & Quality Assurance
-
-Scaling production while maintaining quality:
-
-### Manufacturing Setup
-- Establishing production facilities
-- Training skilled workers
-- Implementing quality control systems
-- Creating efficient supply chains
-
-### Quality Assurance
-- Regular testing of raw materials and finished products
-- Continuous improvement processes
-- Customer feedback integration
-- Certification and compliance management
-
-## Stage 5: Community Impact & Support
-
-Ensuring sustainable long-term benefits:
-
-### Employment Creation
-- Direct employment in collection and processing
-- Indirect opportunities in transportation and services
-- Skills development and training programs
-- Entrepreneurship support and microfinance
-
-### Ongoing Support
-- Technical assistance for community operators
-- Market linkage facilitation
-- Continuous monitoring and evaluation
-- Adaptation to changing community needs
-
-## Measuring Success
-
-Our comprehensive impact measurement includes:
-- Environmental metrics (waste diverted, emissions reduced)
-- Economic indicators (income generated, jobs created)
-- Social impact (communities engaged, skills developed)
-- Product quality and market acceptance
-
-## Case Study: Kilifi County Implementation
-
-In Kilifi County, our process has resulted in:
-- 15 collection points established
-- 200+ community members trained
-- 25 tons of plastic processed monthly
-- 12 different products launched
-- 60% increase in local recycling rates
-
-*Want to implement our sustainable development process in your community? Contact us to discuss partnership opportunities and technical support.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'Five-Stage Transformation Process'
+      },
+      {
+        type: 'paragraph',
+        content: 'At Tebari, we\'ve developed a comprehensive five-stage process that transforms plastic waste into valuable products while creating sustainable economic opportunities for communities across Kenya.'
+      },
+      {
+        type: 'icon-list',
+        items: [
+          'Stage 1: Waste Assessment & Collection Design - Partnering with local leaders and understanding existing waste management practices.',
+          'Stage 2: Sorting & Processing Integration - Advanced technology meets community needs with optical sorting and mobile processing units.',
+          'Stage 3: Product Development & Innovation - Creating market-relevant products from recycled materials through extensive market research.',
+          'Stage 4: Production & Quality Assurance - Scaling production while maintaining quality through manufacturing setup and quality control.',
+          'Stage 5: Community Impact & Support - Ensuring sustainable long-term benefits through employment creation and ongoing support.'
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Case Study: Kilifi County Implementation'
+      },
+      {
+        type: 'stats',
+        statsData: [
+          { icon: 'Settings', value: '15', label: 'Collection Points Established' },
+          { icon: 'Users', value: '200+', label: 'Community Members Trained' },
+          { icon: 'TrendingUp', value: '25', label: 'Tons Processed Monthly' }
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'Want to implement our sustainable development process in your community? Contact us to discuss partnership opportunities and technical support.'
+      }
+    ],
     author: 'Tebari Team',
     date: 'November 20, 2024',
     category: 'Development Process',
@@ -417,133 +292,57 @@ In Kilifi County, our process has resulted in:
     title: 'Future of the Blue Economy: Trends in Sustainable Development',
     slug: 'future-blue-economy-trends',
     excerpt: 'Exploring emerging trends in sustainable ocean-based economic development and how plastic recycling plays a crucial role in Kenya\'s blue economy future.',
-    content: `
-# Future of the Blue Economy: Trends in Sustainable Development
-
-Kenya's blue economy presents tremendous opportunities for sustainable development, with plastic recycling and waste management playing crucial roles in protecting and utilizing our marine resources responsibly.
-
-## Understanding the Blue Economy
-
-The blue economy encompasses all economic activities related to oceans, seas, and coasts, including:
-- Sustainable fisheries and aquaculture
-- Marine tourism and recreation
-- Renewable ocean energy
-- Marine biotechnology and research
-- Ocean waste management and recycling
-
-## Current State of Kenya's Blue Economy
-
-Kenya's coastline and marine resources contribute significantly to the national economy:
-- Tourism generates over $1 billion annually
-- Fisheries support 500,000+ livelihoods
-- Maritime transport handles 95% of international trade
-- Marine ecosystems provide critical environmental services
-
-## Plastic Pollution: A Blue Economy Challenge
-
-Marine plastic pollution threatens Kenya's blue economy through:
-- Damage to marine ecosystems and biodiversity
-- Reduced tourism appeal of polluted beaches
-- Threats to fish populations and food security
-- Increased costs for coastal cleanup and management
-
-## Tebari's Role in the Blue Economy
-
-Our plastic recycling initiatives directly support blue economy development:
-
-### Ocean Cleanup Operations
-- Removing plastic waste from marine environments
-- Protecting marine biodiversity and ecosystems
-- Supporting tourism recovery through cleaner beaches
-- Creating employment for coastal communities
-
-### Sustainable Product Development
-- Converting ocean plastic into valuable products
-- Supporting circular economy principles
-- Reducing dependence on virgin materials
-- Creating new market opportunities
-
-### Community Empowerment
-- Training coastal communities in recycling technologies
-- Creating sustainable income opportunities
-- Building local capacity for waste management
-- Supporting small-scale entrepreneurship
-
-## Emerging Trends in Blue Economy Development
-
-### 1. Technology Integration
-- IoT sensors for monitoring ocean health
-- AI-powered waste collection optimization
-- Blockchain for supply chain transparency
-- Satellite monitoring of marine protected areas
-
-### 2. Circular Economy Models
-- Zero-waste coastal tourism initiatives
-- Closed-loop aquaculture systems
-- Marine plastic-to-fuel technologies
-- Integrated coastal zone management
-
-### 3. Climate Resilience
-- Blue carbon projects for carbon sequestration
-- Climate-adaptive coastal infrastructure
-- Renewable ocean energy development
-- Ecosystem-based adaptation strategies
-
-### 4. Policy and Governance
-- Extended producer responsibility regulations
-- Marine protected area expansion
-- International cooperation frameworks
-- Sustainable financing mechanisms
-
-## Opportunities for Growth
-
-Kenya's blue economy can expand through:
-- Sustainable aquaculture development
-- Marine renewable energy projects
-- Eco-tourism and marine recreation
-- Ocean technology innovation hubs
-- Regional blue economy partnerships
-
-## Challenges and Solutions
-
-### Environmental Challenges
-- Climate change impacts on marine ecosystems
-- Overfishing and resource depletion
-- Coastal erosion and habitat loss
-- Marine pollution from land-based sources
-
-### Economic Challenges
-- Limited access to financing for blue economy projects
-- Lack of technical capacity and skills
-- Inadequate infrastructure development
-- Market access and value chain constraints
-
-### Tebari's Solutions
-- Sustainable waste management systems
-- Community-based recycling programs
-- Technology transfer and capacity building
-- Market linkage and value addition services
-
-## Future Outlook
-
-The future of Kenya's blue economy depends on:
-- Sustainable resource management practices
-- Innovation in ocean technologies
-- Strong governance and policy frameworks
-- Community participation and empowerment
-- International cooperation and partnerships
-
-## Investment Opportunities
-
-Key areas for blue economy investment include:
-- Ocean waste management infrastructure
-- Sustainable fisheries and aquaculture
-- Marine renewable energy projects
-- Coastal tourism development
-- Marine biotechnology research
-
-*Ready to contribute to Kenya's blue economy future? Partner with Tebari to develop sustainable solutions that protect our marine resources while creating economic opportunities.*
-    `,
+    content: [
+      {
+        type: 'heading',
+        content: 'Understanding the Blue Economy'
+      },
+      {
+        type: 'paragraph',
+        content: 'The blue economy encompasses all economic activities related to oceans, seas, and coasts, including sustainable fisheries, marine tourism, renewable ocean energy, and ocean waste management.'
+      },
+      {
+        type: 'heading',
+        content: 'Current State of Kenya\'s Blue Economy'
+      },
+      {
+        type: 'stats',
+        statsData: [
+          { icon: 'DollarSign', value: '$1B+', label: 'Annual Tourism Revenue' },
+          { icon: 'Users', value: '500K+', label: 'Livelihoods Supported by Fisheries' },
+          { icon: 'TrendingUp', value: '95%', label: 'International Trade via Maritime' }
+        ]
+      },
+      {
+        type: 'heading',
+        content: 'Emerging Trends in Blue Economy Development'
+      },
+      {
+        type: 'list',
+        items: [
+          'Technology Integration: IoT sensors for monitoring ocean health and AI-powered waste collection optimization',
+          'Circular Economy Models: Zero-waste coastal tourism initiatives and closed-loop aquaculture systems',
+          'Climate Resilience: Blue carbon projects and ecosystem-based adaptation strategies',
+          'Policy and Governance: Extended producer responsibility regulations and marine protected area expansion'
+        ]
+      },
+      {
+        type: 'chart',
+        chartData: {
+          title: 'Blue Economy Growth Sectors',
+          data: [
+            { name: 'Sustainable Tourism', value: 35 },
+            { name: 'Ocean Technology', value: 25 },
+            { name: 'Waste Management', value: 20 },
+            { name: 'Renewable Energy', value: 20 }
+          ]
+        }
+      },
+      {
+        type: 'quote',
+        content: 'Ready to contribute to Kenya\'s blue economy future? Partner with Tebari to develop sustainable solutions that protect our marine resources while creating economic opportunities.'
+      }
+    ],
     author: 'Tebari Team',
     date: 'November 15, 2024',
     category: 'Blue Economy',
