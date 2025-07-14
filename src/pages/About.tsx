@@ -134,14 +134,14 @@ const About = () => {
                       role: "Founder & CEO",
                       bio: "Leading Tebari's mission to transform plastic waste into sustainable solutions across Kenya.",
                       email: "linus@tebari.net",
-                      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      image: "/lovable-uploads/7dced1c1-f838-45ef-9192-f4c6d9002e25.png"
                     },
                     {
                       name: "Nicholas Okeyo",
                       role: "Co-Founder & COO",
                       bio: "Overseeing operations and community partnerships to ensure sustainable impact and growth.",
                       email: "nick@tebari.net",
-                      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      image: "/lovable-uploads/b46fb5fb-9e17-44ab-b920-b4cfe1c6fb6a.png"
                     }
                   ].map((member, i) => (
                     <Card key={i} className="bg-gray-50 border border-gray-100 overflow-hidden">
@@ -151,7 +151,7 @@ const About = () => {
                             <img 
                               src={member.image} 
                               alt={member.name} 
-                              className="w-full h-full object-cover filter grayscale" 
+                              className="w-full h-full object-cover" 
                             />
                           </div>
                           <h3 className="font-bold text-xl mb-1">{member.name}</h3>

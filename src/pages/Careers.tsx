@@ -84,9 +84,9 @@ const Careers = () => {
                       <div className="bg-white rounded-xl p-6 border border-gray-200">
                         <div className="flex flex-col items-center text-center">
                           <img 
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            src="/lovable-uploads/7dced1c1-f838-45ef-9192-f4c6d9002e25.png"
                             alt="Linus Owino"
-                            className="w-32 h-32 rounded-full mb-4 object-cover filter grayscale"
+                            className="w-32 h-32 rounded-full mb-4 object-cover"
                           />
                           <h3 className="text-xl font-bold text-gray-900">Linus Owino</h3>
                           <p className="text-gray-600 mb-4">Founder & CEO</p>
@@ -102,9 +102,9 @@ const Careers = () => {
                       <div className="bg-white rounded-xl p-6 border border-gray-200">
                         <div className="flex flex-col items-center text-center">
                           <img 
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            src="/lovable-uploads/b46fb5fb-9e17-44ab-b920-b4cfe1c6fb6a.png"
                             alt="Nicholas Okeyo"
-                            className="w-32 h-32 rounded-full mb-4 object-cover filter grayscale"
+                            className="w-32 h-32 rounded-full mb-4 object-cover"
                           />
                           <h3 className="text-xl font-bold text-gray-900">Nicholas Okeyo</h3>
                           <p className="text-gray-600 mb-4">Co-Founder & COO</p>
