@@ -26,25 +26,25 @@ const Features = () => {
       icon: <Users className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Community Collection",
       description: "Gathering plastic waste from communities and coastlines through organized collection programs and partnerships.",
-      image: "/lovable-uploads/48e540e5-6a25-44e4-b3f7-80f3bfc2777a.png"
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
     },
     {
       icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Sorting & Processing",
       description: "Advanced recycling and sorting technology that efficiently processes different types of plastic waste.",
-      image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png"
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: <Wrench className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Product Manufacturing",
       description: "Transforming sorted plastic waste into valuable new materials and products for various industries.",
-      image: "/lovable-uploads/cf8966e3-de0d-445f-9fbd-ee6c48daa7ff.png"
+      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: <BookOpen className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Education & Impact",
       description: "Community training and awareness programs that promote sustainable practices and environmental stewardship.",
-      image: "/lovable-uploads/6739bd63-bf19-4abd-bb23-0b613bbf7ac8.png"
+      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2013&q=80"
     }
   ];
 
@@ -109,15 +109,15 @@ const Features = () => {
   }, []);
 
   const sensorCaseStudies = [{
-    image: "/lovable-uploads/843446fe-638e-4efb-b885-ed3cd505325a.png",
+    image: "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
     title: "Coastal Cleanup Event",
     description: "Community-driven plastic collection from beaches and coastlines, preventing ocean pollution while gathering raw materials."
   }, {
-    image: "/lovable-uploads/5463c9c5-0946-4280-a14b-17636ff69a98.png",
+    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     title: "Recycling Factory Process",
     description: "Advanced sorting and processing facility that transforms collected plastic waste into high-quality recycled materials."
   }, {
-    image: "/lovable-uploads/c5f8ee24-9815-4ebe-b65d-6f3d449feb8b.png",
+    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
     title: "Community Workshop",
     description: "Educational programs that teach sustainable practices and provide economic opportunities through recycling initiatives."
   }];
@@ -310,7 +310,7 @@ const Features = () => {
                 </div>
               </Carousel>
               <div className="text-center mt-6 text-sm text-gray-600">
-                <p className="font-medium">These examples showcase just a few ways our textile sensors can enhance safety and performance</p>
+                <p className="font-medium">These examples showcase our comprehensive approach to plastic waste management and community empowerment</p>
               </div>
             </div>
           </div>
