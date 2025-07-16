@@ -26,25 +26,25 @@ const Features = () => {
       icon: <Users className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Community Collection",
       description: "Gathering plastic waste from communities and coastlines through organized collection programs and partnerships.",
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+      image: "https://images.unsplash.com/photo-1572803485239-34b8a4965c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Sorting & Processing",
       description: "Advanced recycling and sorting technology that efficiently processes different types of plastic waste.",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
     },
     {
       icon: <Wrench className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Product Manufacturing",
       description: "Transforming sorted plastic waste into valuable new materials and products for various industries.",
-      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       icon: <BookOpen className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Education & Impact",
       description: "Community training and awareness programs that promote sustainable practices and environmental stewardship.",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2013&q=80"
+      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ];
 
@@ -109,18 +109,19 @@ const Features = () => {
   }, []);
 
   const sensorCaseStudies = [{
-    image: "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-    title: "Coastal Cleanup Event",
-    description: "Community-driven plastic collection from beaches and coastlines, preventing ocean pollution while gathering raw materials."
+    image: "https://images.unsplash.com/photo-1594736797933-d0401ba0e671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    title: "Plastic Bottle Collection Drive",
+    description: "Community volunteers collecting plastic bottles and containers for recycling, creating economic opportunities while cleaning the environment."
   }, {
-    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-    title: "Recycling Factory Process",
-    description: "Advanced sorting and processing facility that transforms collected plastic waste into high-quality recycled materials."
+    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    title: "Recycled Plastic Products",
+    description: "Manufacturing facility producing new products from recycled plastic waste, including building materials and household items."
   }, {
-    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
-    title: "Community Workshop",
-    description: "Educational programs that teach sustainable practices and provide economic opportunities through recycling initiatives."
+    image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    title: "Community Training Workshop",
+    description: "Educational sessions teaching communities about plastic waste management, sorting techniques, and sustainable practices."
   }];
+
   const stepFlowItems = [{
     icon: <Microchip className="h-10 w-10 text-tebari-green" />,
     title: "Collection Network",
