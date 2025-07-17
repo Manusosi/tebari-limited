@@ -120,6 +120,14 @@ const Features = () => {
     image: "/lovable-uploads/0b050b90-7be0-43f3-8285-57ea81afb241.png",
     title: "Community Training Workshop",
     description: "Educational sessions teaching communities about plastic waste management, sorting techniques, and sustainable practices."
+  }, {
+    image: "/lovable-uploads/eeb4c09e-1923-433f-914a-f4c951acfcc6.png",
+    title: "Circular Plastic Economy: Rethinking Waste Management",
+    description: "Implementing circular economy principles to transform plastic waste into valuable resources and sustainable business opportunities."
+  }, {
+    image: "/lovable-uploads/eeb4c09e-1923-433f-914a-f4c951acfcc6.png",
+    title: "The Science of Recycling",
+    description: "Advanced scientific processes and technology used to break down and transform plastic waste into new materials."
   }];
 
   const stepFlowItems = [{
