@@ -1,121 +1,96 @@
-import { useEffect, useRef, useState } from 'react';
-import { Users, Recycle, Wrench, BookOpen, ArrowRight, Box, Truck, Code, CheckCircle, Rocket, Factory, Microchip, Handshake, RefreshCcw, MessageSquare } from "lucide-react";
-import { cn } from '@/lib/utils';
+
+import { motion } from "framer-motion";
+import { Leaf, Recycle, Users, Globe, Award, Target } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Card, CardContent } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Link } from 'react-router-dom';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Progress } from "@/components/ui/progress";
-import { useIsMobile } from '@/hooks/use-mobile';
-import { Button } from "@/components/ui/button";
-import { useScrollHijack } from '@/hooks/useScrollHijack';
 
 const Features = () => {
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const hijackSectionRef = useRef<HTMLDivElement>(null);
-  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
-  const [progressValue, setProgressValue] = useState(0);
-  const [currentSprint, setCurrentSprint] = useState(1);
-  const totalSprints = 3;
-  const isMobile = useIsMobile();
-
   const features = [
     {
-      icon: <Users className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Community Collection",
-      description: "Gathering plastic waste from communities and coastlines through organized collection programs and partnerships.",
-      image: "/lovable-uploads/ba0ef241-e9a9-4a7e-8f81-5b4c5ae33aeb.png"
+      icon: <Recycle className="h-8 w-8" />,
+      title: "Advanced Recycling Technology",
+      description: "State-of-the-art equipment to process various types of plastic waste into high-quality recycled materials."
     },
     {
-      icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Sorting & Processing",
-      description: "Advanced recycling and sorting technology that efficiently processes different types of plastic waste.",
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+      icon: <Users className="h-8 w-8" />,
+      title: "Community Empowerment",
+      description: "Training local communities in waste collection, sorting, and recycling techniques to create sustainable livelihoods."
     },
     {
-      icon: <Wrench className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Product Manufacturing",
-      description: "Transforming sorted plastic waste into valuable new materials and products for various industries.",
-      image: "/lovable-uploads/ac1cd6db-1491-467f-8cc4-cf8e10d3b5e9.png"
+      icon: <Globe className="h-8 w-8" />,
+      title: "Environmental Impact",
+      description: "Reducing plastic pollution in Kenya's environment while contributing to the blue economy and marine conservation."
     },
     {
-      icon: <BookOpen className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Education & Impact",
-      description: "Community training and awareness programs that promote sustainable practices and environmental stewardship.",
-      image: "/lovable-uploads/a379c144-f21a-4d1e-8b5b-974aa66de067.png"
+      icon: <Award className="h-8 w-8" />,
+      title: "Quality Assurance",
+      description: "Rigorous testing and quality control to ensure recycled products meet international standards."
+    },
+    {
+      icon: <Leaf className="h-8 w-8" />,
+      title: "Circular Economy",
+      description: "Creating closed-loop systems where waste becomes valuable input for new products and processes."
+    },
+    {
+      icon: <Target className="h-8 w-8" />,
+      title: "Sustainable Solutions",
+      description: "Developing innovative approaches to turn plastic waste into construction materials, textiles, and more."
     }
   ];
 
-  const { isHijacked, currentIndex } = useScrollHijack(hijackSectionRef, features.length);
-
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const contactSection = document.getElementById('contact-info');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
+  const caseStudies = [
+    {
+      title: "Ocean Cleanup Initiative",
+      subtitle: "Removing plastic waste from Kenya's coastline",
+      image: "/lovable-uploads/6739bd63-bf19-4abd-bb23-0b613bbf7ac8.png",
+      description: "Our ocean cleanup project has successfully removed over 50 tons of plastic waste from Kenyan beaches and coastal waters, directly contributing to marine ecosystem protection.",
+      impact: "50+ tons of plastic waste removed",
+      link: "/projects/ocean-cleanup"
+    },
+    {
+      title: "Community Recycling Centers",
+      subtitle: "Empowering local communities",
+      image: "/lovable-uploads/aa5291bd-2417-4c1e-9a02-0bcc71a92507.png",
+      description: "We've established 15 community recycling centers across Kenya, providing training and equipment to local entrepreneurs for sustainable waste management.",
+      impact: "15 centers established, 200+ jobs created",
+      link: "/projects/community-centers"
+    },
+    {
+      title: "Plastic-to-Construction Materials",
+      subtitle: "Innovative building solutions",
+      image: "/lovable-uploads/4187f423-ba69-4043-be76-c43098488348.png",
+      description: "Converting plastic waste into durable construction materials, providing affordable housing solutions while addressing waste management challenges.",
+      impact: "30% cost reduction in construction materials",
+      link: "/projects/construction-materials"
     }
-  };
+  ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-in');
-          (entry.target as HTMLElement).style.opacity = '1';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    if (featuresRef.current) {
-      const elements = featuresRef.current.querySelectorAll('.feature-item');
-      elements.forEach(el => {
-        if (!el.classList.contains('animate-slide-in')) {
-          (el as HTMLElement).style.opacity = '0';
-          observer.observe(el);
-        }
-      });
+  const processSteps = [
+    {
+      step: "01",
+      title: "Collection & Sorting",
+      description: "Plastic waste is collected from communities, beaches, and waste management centers, then sorted by type and quality."
+    },
+    {
+      step: "02",
+      title: "Cleaning & Processing",
+      description: "Thorough cleaning removes contaminants, followed by shredding and melting to prepare materials for recycling."
+    },
+    {
+      step: "03",
+      title: "Manufacturing",
+      description: "Recycled plastic is transformed into new products including construction materials, textiles, and household items."
+    },
+    {
+      step: "04",
+      title: "Distribution",
+      description: "Finished products are distributed to markets, creating economic value and closing the circular economy loop."
     }
-    return () => observer.disconnect();
-  }, []);
-  
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    const animateProgress = () => {
-      setProgressValue(0);
-      interval = setInterval(() => {
-        setProgressValue(prev => {
-          if (prev >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-              setCurrentSprint(prev => prev < totalSprints ? prev + 1 : 1);
-              animateProgress();
-            }, 500);
-            return 100;
-          }
-          return prev + 2;
-        });
-      }, 100);
-    };
-    animateProgress();
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, []);
+  ];
 
-  const sensorCaseStudies = [{
-    image: "/lovable-uploads/29216872-19ac-4f42-a4de-493eef44a00a.png",
-    title: "Plastic Bottle Collection Drive",
-    description: "Community volunteers collecting plastic bottles and containers for recycling, creating economic opportunities while cleaning the environment."
-  }, {
+  const galleryItems = [{
     image: "/lovable-uploads/d6a7ae37-e01c-4bd1-9d47-0dd9401a2db0.png",
     title: "Recycled Plastic Products",
-    description: "Manufacturing facility producing new products from recycled plastic waste, including building materials and household items."
+    description: "High-quality products made from recycled plastic materials, demonstrating the value of our circular economy approach."
   }, {
     image: "/lovable-uploads/0b050b90-7be0-43f3-8285-57ea81afb241.png",
     title: "Community Training Workshop",
@@ -131,364 +106,218 @@ const Features = () => {
   }];
 
   const stepFlowItems = [{
-    icon: <Microchip className="h-10 w-10 text-tebari-green" />,
-    title: "Collection Network",
-    description: "Our community-based collection system across Kenya"
+    step: "01",
+    title: "Waste Collection",
+    description: "Community-based collection of plastic waste from households, businesses, and coastal areas."
   }, {
-    icon: <Factory className="h-10 w-10 text-tebari-green" />,
-    title: "Processing Technology",
-    description: "Advanced sorting and recycling equipment and processes"
+    step: "02", 
+    title: "Sorting & Processing",
+    description: "Advanced sorting techniques to categorize plastic by type and prepare for recycling processes."
   }, {
-    icon: <Handshake className="h-10 w-10 text-tebari-green" />,
-    title: "Community Partners",
-    description: "Local partnerships for sustainable impact and growth"
-  }];
-  const sprintPhases = [{
-    name: "Planning",
-    icon: <CheckCircle className="h-4 w-4" />
+    step: "03",
+    title: "Recycling & Manufacturing", 
+    description: "State-of-the-art equipment transforms waste into new products and materials."
   }, {
-    name: "Development",
-    icon: <Code className="h-4 w-4" />
-  }, {
-    name: "Testing",
-    icon: <Box className="h-4 w-4" />
-  }, {
-    name: "Review",
-    icon: <RefreshCcw className="h-4 w-4" />
+    step: "04",
+    title: "Market Distribution",
+    description: "Recycled products reach markets, creating economic opportunities and environmental benefits."
   }];
 
-  return <>
-      <section id="features" className="relative bg-white overflow-hidden py-10 md:py-[50px] w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8" ref={featuresRef}> 
-          <div className="text-center mb-10 max-w-3xl mx-auto feature-item">
-            <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
-              Recycling Solutions
+  return (
+    <section id="features" className="py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Features Grid */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-3 px-3 py-1 bg-tebari-green text-white rounded-full text-sm font-medium">
+            Our Solutions
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Transforming Waste Into Value
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            We use innovative technology and community partnerships to create sustainable solutions for plastic waste management across Kenya.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div className="text-tebari-green mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Case Studies Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-3 px-3 py-1 bg-tebari-green text-white rounded-full text-sm font-medium">
+              Success Stories
             </div>
-            <p className="text-gray-600 mt-4">
-              Our comprehensive approach transforms plastic waste into valuable resources while building sustainable communities across Kenya.
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Making Real Impact
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              See how our innovative recycling solutions are transforming communities and the environment across Kenya.
             </p>
           </div>
-          
-          {/* Scroll-hijacked features section */}
-          <div 
-            ref={hijackSectionRef}
-            className={cn(
-              "relative transition-all duration-500",
-              isHijacked ? "fixed inset-0 z-50 bg-black" : "grid grid-cols-1 md:grid-cols-2 gap-5"
-            )}
-            style={{ height: isHijacked ? '100vh' : 'auto' }}
-          >
-            {isHijacked && (
-              <div className="absolute top-4 right-4 z-10 text-white text-sm opacity-70">
-                {currentIndex + 1} / {features.length}
-              </div>
-            )}
-            
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className={cn(
-                  "feature-item rounded-xl overflow-hidden transform transition-all duration-500 relative shadow-lg",
-                  isHijacked 
-                    ? cn(
-                        "absolute inset-0 w-full h-full",
-                        index === currentIndex 
-                          ? "opacity-100 translate-x-0" 
-                          : index < currentIndex 
-                            ? "opacity-0 -translate-x-full" 
-                            : "opacity-0 translate-x-full"
-                      )
-                    : "hover:-translate-y-1 h-[280px]"
-                )}
-                style={{
-                  transitionDelay: isHijacked ? '0ms' : `${index * 100}ms`
-                }}
-                onMouseEnter={() => !isHijacked && setHoveredFeature(index)} 
-                onMouseLeave={() => !isHijacked && setHoveredFeature(null)}
-              >
-                <div className="absolute inset-0 w-full h-full">
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title} 
-                    className={cn(
-                      "w-full h-full object-cover transition-all duration-300",
-                      isHijacked ? "grayscale-0" : "grayscale"
-                    )} 
-                  />
-                  <div className={cn(
-                    "absolute inset-0 transition-opacity duration-300",
-                    isHijacked 
-                      ? "bg-black/40" 
-                      : hoveredFeature === index 
-                        ? "bg-black/50" 
-                        : "bg-black/70"
-                  )}></div>
-                </div>
-                
-                <div className={cn(
-                  "relative z-10 flex flex-col justify-center",
-                  isHijacked 
-                    ? "p-16 h-full text-center items-center" 
-                    : "p-6 h-full justify-between"
-                )}>
-                  <div className={isHijacked ? "space-y-8" : ""}>
-                    <div className={cn(
-                      "inline-block p-3 bg-gray-800/40 backdrop-blur-sm rounded-lg transition-all duration-300 transform",
-                      isHijacked 
-                        ? "mb-6 scale-150" 
-                        : hoveredFeature === index 
-                          ? "mb-4 hover:scale-110" 
-                          : "mb-4"
-                    )}>
-                      <div className={`transform transition-transform duration-300 ${!isHijacked && hoveredFeature === index ? 'rotate-12' : ''}`}>
-                        {feature.icon}
-                      </div>
-                    </div>
-                    <h3 className={cn(
-                      "font-semibold text-white",
-                      isHijacked ? "text-4xl mb-6" : "text-xl mb-2"
-                    )}>
-                      {feature.title}
-                    </h3>
-                    <p className={cn(
-                      "text-white/90",
-                      isHijacked ? "text-lg max-w-2xl" : "text-sm"
-                    )}>
-                      {feature.description}
-                    </p>
-                  </div>
-                  {!isHijacked && (
-                    <div className={`h-0.5 bg-white/70 mt-3 transition-all duration-500 ${hoveredFeature === index ? 'w-full' : 'w-0'}`}></div>
-                  )}
-                </div>
-              </div>
-            ))}
-            
-            {isHijacked && (
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center">
-                <div className="flex space-x-2 mb-4">
-                  {features.map((_, index) => (
-                    <div 
-                      key={index}
-                      className={cn(
-                        "w-2 h-2 rounded-full transition-all duration-300",
-                        index === currentIndex ? "bg-white w-8" : "bg-white/50"
-                      )}
-                    />
-                  ))}
-                </div>
-                <p className="text-sm opacity-70">
-                  {isMobile ? "Swipe" : "Scroll"} to continue • Press ESC to exit
-                </p>
-              </div>
-            )}
-          </div>
 
-          <div className="mt-16 mb-8 feature-item">
-            <div className="text-center mb-8">
-              <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
-                Real-World Impact
-              </div>
-              <h3 className="text-2xl font-bold">Our Work in Action</h3>
-              <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-                See how we're making a difference through community engagement, innovative recycling, and sustainable education programs.
-                <span className="block text-sm mt-1 text-tebari-teal">Scroll horizontally to see more examples →</span>
-              </p>
-            </div>
-            
-            <div className="rounded-xl overflow-hidden bg-white p-4 feature-item">
-              <Carousel className="w-full max-w-7xl mx-auto">
-                <CarouselContent className="flex">
-                  {sensorCaseStudies.map((study, index) => <CarouselItem key={index} className="md:basis-1/3 flex-shrink-0">
-                      <Card className="border border-gray-100 shadow-md">
-                        <CardContent className="p-0">
-                          <div className="w-full h-48">
-                            <img src={study.image} alt={study.title} className="w-full h-full object-cover rounded-t-lg" />
-                          </div>
-                          <div className="p-4">
-                            <h4 className="font-semibold text-lg">{study.title}</h4>
-                            <p className="text-sm text-gray-600 mt-2">{study.description}</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>)}
-                </CarouselContent>
-                <div className="flex justify-center mt-6 gap-2">
-                  <CarouselPrevious className="relative static left-auto translate-y-0 hover:bg-gray-100" />
-                  <CarouselNext className="relative static right-auto translate-y-0 hover:bg-gray-100" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={study.image} 
+                    alt={study.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </Carousel>
-              <div className="text-center mt-6 text-sm text-gray-600">
-                <p className="font-medium">These examples showcase our comprehensive approach to plastic waste management and community empowerment</p>
-              </div>
-            </div>
+                <div className="p-6">
+                  <div className="text-sm text-tebari-green font-medium mb-2">{study.subtitle}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{study.title}</h3>
+                  <p className="text-gray-600 mb-4">{study.description}</p>
+                  <div className="text-sm font-semibold text-tebari-green mb-4">{study.impact}</div>
+                  <a 
+                    href={study.link}
+                    className="inline-flex items-center text-tebari-green hover:text-tebari-green/80 font-medium"
+                  >
+                    Learn More →
+                  </a>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-        <div className="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-tebari-green hover:bg-tebari-green/90 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto">
-            Need Custom Solutions?
-            <MessageSquare className="ml-2 w-4 h-4 group-hover:animate-pulse" />
-          </Button>
-          
-          <Button onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 py-3 bg-white text-tebari-green rounded-lg border border-tebari-green hover:bg-tebari-green/5 hover:shadow-md transition-all group w-full sm:w-auto">
-            Learn More About Our Process
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
-      </section>
-      
-      <section id="technology" className="bg-gray-50 py-10 md:py-16">
-        <div className="w-full px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+
+        {/* Process Steps */}
+        <div className="mb-20">
           <div className="text-center mb-12">
-            <div className="inline-block mb-2 px-3 py-1 bg-tebari-green/10 text-tebari-green rounded-full text-sm font-medium">
+            <div className="inline-block mb-3 px-3 py-1 bg-tebari-green text-white rounded-full text-sm font-medium">
               Our Process
             </div>
-            <h2 className="text-3xl font-bold mb-4">Collect → Transform → Repurpose</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Tebari's three-step process combines community engagement, advanced technology, and sustainable manufacturing to create a complete circular economy solution.
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              From Waste to Value
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Our systematic approach ensures maximum value extraction from plastic waste while creating sustainable economic opportunities.
             </p>
           </div>
-          
-          <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 mb-10 transition-all duration-300 hover:shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {stepFlowItems.map((item, index) => <HoverCard key={index}>
-                  <HoverCardTrigger asChild>
-                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 h-full cursor-pointer">
-                      <div className="flex flex-col items-center text-center">
-                        <div className="bg-gray-50 rounded-full p-4 mb-4">
-                          {item.icon}
-                        </div>
-                        <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                        <p className="text-sm text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-80 shadow-lg">
-                    <div className="space-y-2">
-                      <h4 className="text-sm font-semibold">{item.title}</h4>
-                      <p className="text-sm">{item.description}</p>
-                      {index === 0 && <p className="text-xs text-gray-500">Our proprietary technology provides the core foundation of every solution we build.</p>}
-                      {index === 1 && <p className="text-xs text-gray-500">We carefully select the best off-the-shelf components to complement our proprietary technology.</p>}
-                      {index === 2 && <p className="text-xs text-gray-500">Our network of production partners ensures quality manufacturing at scale.</p>}
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>)}
-            </div>
 
-            <div className="relative h-16 mb-10">
-              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-300 to-gray-400"></div>
-              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-full -mt-3">
-                <div className="bg-gray-400 rounded-full p-1">
-                  <ArrowRight className="w-5 h-5 text-white rotate-90" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-tebari-green text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  {step.step}
                 </div>
-              </div>
-              
-              <div className="md:hidden flex justify-center items-center h-full">
-                <div className="w-1/3 h-0.5 bg-gray-300"></div>
-                <div className="bg-gray-400 rounded-full p-1 mx-2">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <div className="w-1/3 h-0.5 bg-gray-300"></div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-6 mb-10 shadow-md">
-              <div className="max-w-3xl mx-auto">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
-                  <div className="flex items-center">
-                    <h3 className="text-xl font-bold">Adaptation Project</h3>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-sm text-gray-500 mr-2">Iterative Development</span>
-                    <RefreshCcw className="h-5 w-5 text-gray-600 animate-rotate-slow" />
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-4">Working iteratively with customers to tailor solutions to their needs</p>
-                
-                <div className="relative mb-2">
-                  <Progress value={progressValue} className="h-3 bg-gray-200" />
-                </div>
-                
-                <div className={cn("grid gap-1 mt-4", isMobile ? "grid-cols-2 gap-y-2" : "grid-cols-4")}>
-                  {sprintPhases.map((phase, index) => <div key={index} className={cn("text-center p-2 rounded transition-all", progressValue >= index / sprintPhases.length * 100 && progressValue < (index + 1) / sprintPhases.length * 100 ? "bg-blue-50 border border-blue-100" : "bg-gray-50")}>
-                      <div className="flex flex-col items-center">
-                        <div className={cn("rounded-full p-1 mb-1", progressValue >= index / sprintPhases.length * 100 ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-500")}>
-                          {phase.icon}
-                        </div>
-                        <span className="text-xs font-medium">{phase.name}</span>
-                      </div>
-                    </div>)}
-                </div>
-                
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-6 gap-2">
-                  <div className="flex items-center">
-                    <div className="bg-green-100 rounded-full p-1 mr-2 shrink-0">
-                      <CheckCircle className="h-4 w-4 text-green-600" />
-                    </div>
-                    <span className="text-sm text-gray-600">Customer feedback integrated at every stage</span>
-                  </div>
-                  <div className="text-sm text-gray-500 flex items-center mt-2 sm:mt-0">
-                    <span className="mr-2">Continuous improvement</span>
-                    <div className="flex space-x-1">
-                      <span className="inline-block w-2 h-2 bg-gray-300 rounded-full animate-pulse"></span>
-                      <span className="inline-block w-2 h-2 bg-gray-400 rounded-full animate-pulse animation-delay-200"></span>
-                      <span className="inline-block w-2 h-2 bg-gray-500 rounded-full animate-pulse animation-delay-400"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative h-16 mb-10">
-              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-300 to-gray-400"></div>
-              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-full -mt-3">
-                <div className="bg-gray-400 rounded-full p-1">
-                  <ArrowRight className="w-5 h-5 text-white rotate-90" />
-                </div>
-              </div>
-              
-              <div className="md:hidden flex justify-center items-center h-full">
-                <div className="w-1/3 h-0.5 bg-gray-300"></div>
-                <div className="bg-gray-400 rounded-full p-1 mx-2">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-                <div className="w-1/3 h-0.5 bg-gray-300"></div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-gray-100 via-white to-gray-100 rounded-lg p-8 max-w-xl mx-auto text-center shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="relative inline-block mb-4">
-                <div className="absolute inset-0 bg-black/10 rounded-full animate-pulse-slow"></div>
-                <div className="relative bg-white rounded-full p-4 border border-gray-200 shadow-md">
-                  <Rocket className="h-10 w-10 text-gray-700" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Hitting the Market</h3>
-              <p className="text-gray-700">Ready to scale, produce, and launch</p>
-              <div className="flex justify-center mt-4 space-x-2">
-                <span className="inline-block w-3 h-3 rounded-full bg-gray-300 animate-pulse"></span>
-                <span className="inline-block w-3 h-3 rounded-full bg-gray-500 animate-pulse animation-delay-200"></span>
-                <span className="inline-block w-3 h-3 rounded-full bg-gray-700 animate-pulse animation-delay-400"></span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Link to="/technology-details" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center px-4 sm:px-6 bg-white text-tebari-green rounded-lg border border-tebari-green hover:bg-tebari-green/5 hover:shadow-md transition-all group py-3 w-full sm:w-auto justify-center">
-                Learn More About Our Technology
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-              <Button onClick={scrollToContact} className="inline-flex items-center px-4 sm:px-6 py-3 bg-tebari-green hover:bg-tebari-green/90 text-white rounded-lg shadow-md hover:shadow-lg transition-all group w-full sm:w-auto justify-center">
-                Contact Our Team
-                <MessageSquare className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-              </Button>
-            </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
-    </>;
+
+        {/* Gallery Carousel */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-3 px-3 py-1 bg-tebari-green text-white rounded-full text-sm font-medium">
+              Our Work in Action
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              See the Impact
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              From community workshops to finished products, witness how we're building a circular economy across Kenya.
+            </p>
+          </div>
+
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {galleryItems.map((item, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
+        {/* Step Flow Section */}
+        <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-3 px-3 py-1 bg-tebari-green text-white rounded-full text-sm font-medium">
+              Step by Step
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How We Create Change
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Our proven methodology transforms plastic waste into valuable resources while empowering communities.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stepFlowItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                  <div className="w-12 h-12 bg-tebari-green text-white rounded-full flex items-center justify-center text-lg font-bold mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </div>
+                {index < stepFlowItems.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-tebari-green transform -translate-y-1/2"></div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default Features;
