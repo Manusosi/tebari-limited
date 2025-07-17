@@ -294,8 +294,8 @@ const Features = () => {
                   {sensorCaseStudies.map((study, index) => <CarouselItem key={index} className="md:basis-1/3 flex-shrink-0">
                       <Card className="border border-gray-100 shadow-md">
                         <CardContent className="p-0">
-                          <div className="w-full h-full">
-                            <img src={study.image} alt={study.title} className="w-full h-auto object-contain" />
+                          <div className="w-full h-48">
+                            <img src={study.image} alt={study.title} className="w-full h-full object-cover rounded-t-lg" />
                           </div>
                           <div className="p-4">
                             <h4 className="font-semibold text-lg">{study.title}</h4>
