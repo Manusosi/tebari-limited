@@ -26,7 +26,7 @@ const Features = () => {
       icon: <Users className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Community Collection",
       description: "Gathering plastic waste from communities and coastlines through organized collection programs and partnerships.",
-      image: "https://images.unsplash.com/photo-1572803485239-34b8a4965c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "/lovable-uploads/ba0ef241-e9a9-4a7e-8f81-5b4c5ae33aeb.png"
     },
     {
       icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
@@ -38,13 +38,13 @@ const Features = () => {
       icon: <Wrench className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Product Manufacturing",
       description: "Transforming sorted plastic waste into valuable new materials and products for various industries.",
-      image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "/lovable-uploads/ac1cd6db-1491-467f-8cc4-cf8e10d3b5e9.png"
     },
     {
       icon: <BookOpen className="w-10 h-10 text-white transition-transform duration-300 transform" />,
       title: "Education & Impact",
       description: "Community training and awareness programs that promote sustainable practices and environmental stewardship.",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "/lovable-uploads/a379c144-f21a-4d1e-8b5b-974aa66de067.png"
     }
   ];
 
@@ -109,7 +109,7 @@ const Features = () => {
   }, []);
 
   const sensorCaseStudies = [{
-    image: "https://images.unsplash.com/photo-1594736797933-d0401ba0e671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    image: "/lovable-uploads/29216872-19ac-4f42-a4de-493eef44a00a.png",
     title: "Plastic Bottle Collection Drive",
     description: "Community volunteers collecting plastic bottles and containers for recycling, creating economic opportunities while cleaning the environment."
   }, {
