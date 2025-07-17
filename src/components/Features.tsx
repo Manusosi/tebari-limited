@@ -113,11 +113,11 @@ const Features = () => {
     title: "Plastic Bottle Collection Drive",
     description: "Community volunteers collecting plastic bottles and containers for recycling, creating economic opportunities while cleaning the environment."
   }, {
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/lovable-uploads/d6a7ae37-e01c-4bd1-9d47-0dd9401a2db0.png",
     title: "Recycled Plastic Products",
     description: "Manufacturing facility producing new products from recycled plastic waste, including building materials and household items."
   }, {
-    image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/lovable-uploads/0b050b90-7be0-43f3-8285-57ea81afb241.png",
     title: "Community Training Workshop",
     description: "Educational sessions teaching communities about plastic waste management, sorting techniques, and sustainable practices."
   }];
