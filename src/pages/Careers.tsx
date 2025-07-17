@@ -89,7 +89,7 @@ const Careers = () => {
                             className="w-32 h-32 rounded-full mb-4 object-cover"
                           />
                           <h3 className="text-xl font-bold text-gray-900">Linus Owino</h3>
-                          <p className="text-gray-600 mb-4">Co-founder</p>
+                          <p className="text-gray-600 mb-4">Founder & CEO</p>
                           <div className="flex flex-col space-y-3">
                             <a href="mailto:linus@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
                               <Mail className="w-5 h-5 mr-2" />
@@ -107,7 +107,7 @@ const Careers = () => {
                             className="w-32 h-32 rounded-full mb-4 object-cover"
                           />
                           <h3 className="text-xl font-bold text-gray-900">Nicholas Okeyo</h3>
-                          <p className="text-gray-600 mb-4">Co-founder</p>
+                          <p className="text-gray-600 mb-4">Co-Founder & COO</p>
                           <div className="flex flex-col space-y-3">
                             <a href="mailto:nick@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
                               <Mail className="w-5 h-5 mr-2" />
