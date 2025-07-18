@@ -15,29 +15,54 @@ const About = () => {
   
   return (
     <PageLayout>
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <Link to="/" className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-6 transition-colors">
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-tebari-green to-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+            alt="About Tebari Limited - Plastic recycling facility"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/60 to-white"></div>
+        </div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
             </Link>
             
             <motion.h1 
-              initial={{ opacity: 0, y: -10 }} 
+              initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.5 }} 
-              className="text-4xl font-bold mb-6"
+              transition={{ duration: 0.6 }} 
+              className="text-5xl md:text-6xl font-bold mb-6 text-white"
             >
               About Tebari Limited
             </motion.h1>
             
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.6, delay: 0.2 }} 
+              className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
+            >
+              Transforming plastic waste into sustainable solutions for communities across Kenya
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <motion.p 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 0.5, delay: 0.2 }} 
-                className="text-xl text-gray-600 mb-12"
+                className="text-xl text-gray-600 mb-12 text-center"
               >
                 We're a team of innovators dedicated to transforming plastic waste into sustainable solutions for communities across Kenya.
               </motion.p>
@@ -131,14 +156,14 @@ const About = () => {
                   {[
                     {
                       name: "Linus Owino",
-                      role: "Founder & CEO",
+                      role: "Co-founder",
                       bio: "Leading Tebari's mission to transform plastic waste into sustainable solutions across Kenya.",
                       email: "linus@tebari.net",
                       image: "/lovable-uploads/7dced1c1-f838-45ef-9192-f4c6d9002e25.png"
                     },
                     {
                       name: "Nicholas Okeyo",
-                      role: "Co-Founder & COO",
+                      role: "Co-founder",
                       bio: "Overseeing operations and community partnerships to ensure sustainable impact and growth.",
                       email: "nick@tebari.net",
                       image: "/lovable-uploads/b46fb5fb-9e17-44ab-b920-b4cfe1c6fb6a.png"
