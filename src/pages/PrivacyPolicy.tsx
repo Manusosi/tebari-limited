@@ -41,9 +41,7 @@ const PrivacyPolicy = () => {
               </p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-600 mb-4">
-                We may use the information we collect for various purposes, including to:
-              </p>
+              <p className="text-gray-600 mb-4">At Tebari Limited (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
               <ul className="list-disc pl-6 mb-4 text-gray-600">
                 <li>Provide, operate, and maintain our services</li>
                 <li>Improve, personalize, and expand our services</li>
