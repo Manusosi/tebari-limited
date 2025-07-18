@@ -1,4 +1,3 @@
-
 export interface ContentSection {
   type: 'heading' | 'subheading' | 'paragraph' | 'list' | 'icon-list' | 'bibliography' | 'stats' | 'chart' | 'table' | 'quote';
   content?: string;
@@ -78,7 +77,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'December 15, 2024',
+    date: 'July 17, 2024',
     category: 'Circular Economy',
     imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
     keywords: ['circular economy', 'plastic waste', 'sustainability', 'recycling', 'Kenya'],
@@ -128,7 +127,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'December 10, 2024',
+    date: 'July 17, 2024',
     category: 'Ocean Cleanup',
     imageUrl: '/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png',
     keywords: ['ocean cleanup', 'marine plastic', 'coastal communities', 'recycling', 'sustainability'],
@@ -182,7 +181,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'December 5, 2024',
+    date: 'July 17, 2024',
     category: 'Technology',
     imageUrl: '/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png',
     keywords: ['plastic recycling', 'recycling technology', 'circular economy', 'sustainability', 'materials science'],
@@ -233,7 +232,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'November 28, 2024',
+    date: 'July 17, 2024',
     category: 'Industry Solutions',
     imageUrl: '/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png',
     keywords: ['industrial recycling', 'recycling technology', 'waste management', 'circular economy', 'sustainability'],
@@ -281,7 +280,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'November 20, 2024',
+    date: 'July 17, 2024',
     category: 'Development Process',
     imageUrl: '/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png',
     keywords: ['sustainable development', 'plastic recycling', 'community development', 'circular economy', 'product development'],
@@ -344,7 +343,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'November 15, 2024',
+    date: 'July 17, 2024',
     category: 'Blue Economy',
     imageUrl: '/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png',
     keywords: ['blue economy', 'sustainable development', 'ocean conservation', 'marine pollution', 'circular economy'],

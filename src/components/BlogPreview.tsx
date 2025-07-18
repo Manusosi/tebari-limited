@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ const BlogPreview = () => {
       title: "Circular Plastic Economy: Rethinking Waste Management",
       excerpt: "Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development.",
       image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png",
-      date: "December 15, 2024",
+      date: "July 17, 2024",
       author: "Tebari Team",
       slug: "circular-plastic-economy"
     },
@@ -19,7 +18,7 @@ const BlogPreview = () => {
       title: "Turning Ocean Waste into Opportunity: Innovations in Cleanup",
       excerpt: "How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products.",
       image: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
-      date: "December 10, 2024",
+      date: "July 17, 2024",
       author: "Tebari Team",
       slug: "ocean-waste-opportunity"
     },
@@ -28,7 +27,7 @@ const BlogPreview = () => {
       title: "The Science of Recycling: Converting Plastics into New Materials",
       excerpt: "Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.",
       image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
-      date: "December 5, 2024",
+      date: "July 17, 2024",
       author: "Tebari Team",
       slug: "science-of-recycling"
     }

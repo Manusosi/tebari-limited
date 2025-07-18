@@ -19,6 +19,11 @@ import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Blog from "./pages/Blog";
 import BlogPostDetail from "./pages/BlogPostDetail";
+import OceanCleanup from "./pages/projects/OceanCleanup";
+import RoadConstruction from "./pages/projects/RoadConstruction";
+import EcoPackaging from "./pages/projects/EcoPackaging";
+import SustainableTextiles from "./pages/projects/SustainableTextiles";
+import RecyclingHub from "./pages/projects/RecyclingHub";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
@@ -36,6 +41,11 @@ const App = () => {
             <Route path="/projects/workwear" element={<WorkwearProject />} />
             <Route path="/projects/hockey" element={<HockeyProject />} />
             <Route path="/projects/pet-tracker" element={<PetProject />} />
+            <Route path="/projects/ocean-cleanup" element={<OceanCleanup />} />
+            <Route path="/projects/road-construction" element={<RoadConstruction />} />
+            <Route path="/projects/eco-packaging" element={<EcoPackaging />} />
+            <Route path="/projects/sustainable-textiles" element={<SustainableTextiles />} />
+            <Route path="/projects/recycling-hub" element={<RecyclingHub />} />
             <Route path="/tech-details" element={<TechDetails />} />
             <Route path="/development-process" element={<DevelopmentProcess />} />
             <Route path="/about" element={<About />} />
