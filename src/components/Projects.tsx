@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight, Recycle, Leaf, Building, Shirt, Users } from "lucide-react";
@@ -14,7 +13,7 @@ const Projects = () => {
       title: "Ocean Cleanup Initiative",
       subtitle: "Coastal plastic collection and community engagement",
       description: "Our flagship program collecting plastic waste from Kenya's coastlines while empowering local communities through education and economic opportunities.",
-      image: "/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png",
+      image: "/lovable-uploads/c36c5f79-80b1-4aca-afdb-63d1e60649c1.png",
       slug: "ocean-cleanup",
       icon: <Recycle className="w-6 h-6" />,
       tag: "FEATURED"
@@ -24,7 +23,7 @@ const Projects = () => {
       title: "Recycled Road Construction",
       subtitle: "Innovative infrastructure using recycled plastics",
       description: "Converting plastic waste into durable construction materials for roads and infrastructure projects across Kenya.",
-      image: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
+      image: "/lovable-uploads/6d0d50e5-2bce-4948-8493-4ff1bdf7132d.png",
       slug: "road-construction",
       icon: <Building className="w-6 h-6" />
     },
@@ -33,7 +32,7 @@ const Projects = () => {
       title: "Eco-Packaging Solutions",
       subtitle: "Biodegradable and recycled packaging alternatives",
       description: "Creating sustainable packaging solutions from recycled materials to reduce single-use plastic dependency.",
-      image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
+      image: "/lovable-uploads/476465c2-52fb-4c46-a559-a163ba95a98c.png",
       slug: "eco-packaging",
       icon: <Leaf className="w-6 h-6" />
     },
@@ -42,7 +41,7 @@ const Projects = () => {
       title: "Sustainable Fashion Textiles",
       subtitle: "Plastic waste transformed into textile fibers",
       description: "Converting plastic bottles and waste into high-quality textile fibers for the sustainable fashion industry.",
-      image: "/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png",
+      image: "/lovable-uploads/ac38c2b9-8e0f-458e-b1d8-c25b414feab8.png",
       slug: "sustainable-textiles",
       icon: <Shirt className="w-6 h-6" />
     },
@@ -51,7 +50,7 @@ const Projects = () => {
       title: "Community Recycling Hub",
       subtitle: "Local plastic aggregation and training centers",
       description: "Establishing community-based recycling centers that provide training, equipment, and economic opportunities for local entrepreneurs.",
-      image: "/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png",
+      image: "/lovable-uploads/c920aeb3-0f78-4e2d-b1e4-a8f285973d81.png",
       slug: "recycling-hub",
       icon: <Users className="w-6 h-6" />
     }
