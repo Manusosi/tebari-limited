@@ -8,7 +8,7 @@ const BlogPreview = () => {
       id: 1,
       title: "Circular Plastic Economy: Rethinking Waste Management",
       excerpt: "Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development.",
-      image: "/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png",
+      image: "/lovable-uploads/63c2a3e2-053b-4365-abd3-97afbf384fdc.png",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "circular-plastic-economy"
@@ -17,7 +17,7 @@ const BlogPreview = () => {
       id: 2,
       title: "Turning Ocean Waste into Opportunity: Innovations in Cleanup",
       excerpt: "How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products.",
-      image: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
+      image: "/lovable-uploads/3d9b4ab1-4b93-49d1-a762-4b852a76c4b8.png",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "ocean-waste-opportunity"
@@ -26,7 +26,7 @@ const BlogPreview = () => {
       id: 3,
       title: "The Science of Recycling: Converting Plastics into New Materials",
       excerpt: "Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.",
-      image: "/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png",
+      image: "/lovable-uploads/efc70b5b-f93a-41e4-af42-fd0c98e1221d.png",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "science-of-recycling"

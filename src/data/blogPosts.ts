@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Circular Economy',
-    imageUrl: '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
+    imageUrl: '/lovable-uploads/63c2a3e2-053b-4365-abd3-97afbf384fdc.png',
     keywords: ['circular economy', 'plastic waste', 'sustainability', 'recycling', 'Kenya'],
     metaDescription: 'Discover how Tebari Limited is transforming plastic waste management through circular economy principles in Kenya.'
   },
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Ocean Cleanup',
-    imageUrl: '/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png',
+    imageUrl: '/lovable-uploads/3d9b4ab1-4b93-49d1-a762-4b852a76c4b8.png',
     keywords: ['ocean cleanup', 'marine plastic', 'coastal communities', 'recycling', 'sustainability'],
     metaDescription: 'Learn how Tebari\'s ocean cleanup initiative is transforming marine plastic waste into valuable products while empowering coastal communities.'
   },
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Technology',
-    imageUrl: '/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png',
+    imageUrl: '/lovable-uploads/efc70b5b-f93a-41e4-af42-fd0c98e1221d.png',
     keywords: ['plastic recycling', 'recycling technology', 'circular economy', 'sustainability', 'materials science'],
     metaDescription: 'Explore the advanced scientific processes Tebari uses to convert waste plastics into high-quality recycled materials.'
   },
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Industry Solutions',
-    imageUrl: '/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png',
+    imageUrl: '/lovable-uploads/90e451d3-3516-43ec-90cc-cb92ba544302.png',
     keywords: ['industrial recycling', 'recycling technology', 'waste management', 'circular economy', 'sustainability'],
     metaDescription: 'Discover how Tebari\'s recycling technologies are helping Kenyan industries transform waste into valuable resources.'
   },
@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Development Process',
-    imageUrl: '/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png',
+    imageUrl: '/lovable-uploads/644f9f2a-9d26-428f-bead-914bf3d45fe7.png',
     keywords: ['sustainable development', 'plastic recycling', 'community development', 'circular economy', 'product development'],
     metaDescription: 'Learn about Tebari\'s five-stage process for transforming plastic waste into valuable products while supporting community development.'
   },
@@ -345,7 +345,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Blue Economy',
-    imageUrl: '/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png',
+    imageUrl: '/lovable-uploads/faed02d3-6f87-4c72-bb77-520aa4c1182e.png',
     keywords: ['blue economy', 'sustainable development', 'ocean conservation', 'marine pollution', 'circular economy'],
     metaDescription: 'Explore the future of Kenya\'s blue economy and how Tebari\'s plastic recycling initiatives support sustainable ocean-based development.'
   }
