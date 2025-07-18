@@ -133,8 +133,21 @@ const Footer = () => {
                 Terms of Service
               </Link>
             </div>
-            <div className="text-sm text-gray-400">
-              © 2025 Tebari Limited. All rights reserved.
+            <div className="flex flex-col items-center md:items-end space-y-2">
+              <div className="text-sm text-gray-400">
+                © 2025 Tebari Limited. All rights reserved.
+              </div>
+              <div className="text-sm text-gray-400">
+                Built by{" "}
+                <a 
+                  href="https://portfolio.kazinikazi.co.ke/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-tebari-green hover:text-tebari-green/80 transition-colors"
+                >
+                  KNK Digital
+                </a>
+              </div>
             </div>
           </div>
         </div>
