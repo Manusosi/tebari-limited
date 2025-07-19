@@ -16,18 +16,17 @@ const About = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-tebari-green to-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-            alt="About Tebari Limited - Plastic recycling facility"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/60 to-white"></div>
-        </div>
-        
-        <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+      <div className="pt-16">
+        <div className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+              alt="About Tebari Limited - Plastic recycling facility"
+              className="w-full h-full object-cover opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 to-white/20"></div>
+          </div>
+          <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
@@ -37,7 +36,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6 }} 
-              className="text-5xl md:text-6xl font-bold mb-6 text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
             >
               About Tebari Limited
             </motion.h1>
@@ -46,13 +45,13 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.6, delay: 0.2 }} 
-              className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed text-gray-200"
             >
               Transforming plastic waste into sustainable solutions for communities across Kenya
             </motion.p>
           </div>
         </div>
-      </section>
+      </div>
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">

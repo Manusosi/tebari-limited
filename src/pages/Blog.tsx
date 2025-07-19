@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import BlogPostCard from '@/components/BlogPostCard';
+import HeroSection from '@/components/HeroSection';
 import { blogPosts } from '@/data/blogPosts';
 
 const Blog = () => {
@@ -24,16 +25,12 @@ const Blog = () => {
         type="website"
       />
       
-      <div className="w-full pt-24 pb-12 bg-gradient-to-b from-tebari-green to-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Tebari News &amp; Insights</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              The latest trends and news in plastic recycling, circular economy, and sustainable waste management
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="Tebari News & Insights"
+        subtitle="The latest trends and news in plastic recycling, circular economy, and sustainable waste management"
+        height="md"
+        className="pt-16"
+      />
       
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

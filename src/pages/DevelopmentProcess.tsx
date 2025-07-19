@@ -2,6 +2,7 @@
 import PageLayout from '@/components/PageLayout';
 import SEO from '@/components/SEO';
 import Process from '@/components/Process';
+import HeroSection from '@/components/HeroSection';
 
 const DevelopmentProcess = () => {
   return (
@@ -13,16 +14,12 @@ const DevelopmentProcess = () => {
         keywords={['development process', 'plastic recycling', 'circular economy', 'sustainable development', 'waste management']}
       />
       
-      <div className="pt-24 pb-12 bg-gradient-to-b from-tebari-green to-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Development Process</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              A comprehensive approach to transforming plastic waste into sustainable solutions
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="Our Development Process"
+        subtitle="A comprehensive approach to transforming plastic waste into sustainable solutions"
+        height="md"
+        className="pt-16"
+      />
       
       <Process />
     </PageLayout>

@@ -3,6 +3,7 @@ import { ArrowLeft, Mail, Linkedin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
+import HeroSection from '@/components/HeroSection';
 
 const Careers = () => {
   useEffect(() => {
@@ -12,7 +13,15 @@ const Careers = () => {
   return (
     <div className="min-h-screen bg-white">
       <PageLayout showContact={false}>
-        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <HeroSection
+          title="Join Our Team"
+          subtitle="We're looking for passionate individuals to help us transform plastic waste into sustainable solutions for Kenya's future."
+          height="md"
+          textColor="white"
+          className="pt-16"
+        />
+        
+        <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
             <div className="max-w-6xl mx-auto">
               <Link to="/" className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-6 transition-colors">
@@ -20,26 +29,8 @@ const Careers = () => {
                 Back to Home
               </Link>
               
-              <motion.h1 
-                initial={{ opacity: 0, y: -10 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.5 }} 
-                className="text-4xl font-bold mb-6"
-              >
-                Join Our Team
-              </motion.h1>
-              
               <div className="prose prose-lg max-w-none">
-                <motion.p 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
-                  transition={{ duration: 0.5, delay: 0.2 }} 
-                  className="text-xl text-gray-600 mb-4"
-                >
-                  We're looking for passionate individuals to help us transform plastic waste into sustainable solutions for Kenya's future.
-                </motion.p>
-                
-                <motion.p
+              <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
