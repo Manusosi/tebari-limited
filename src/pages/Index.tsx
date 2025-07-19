@@ -3,7 +3,7 @@ import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Projects from '@/components/Projects';
-import WhyTebari from '@/components/WhyWrlds';
+import WhyTebari from '@/components/WhyTebari';
 import BlogPreview from '@/components/BlogPreview';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';

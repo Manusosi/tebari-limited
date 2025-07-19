@@ -14,7 +14,7 @@ const ProductPlatform = () => {
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Product</h2>
         <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl">
-          5 years invested into tech focused end-to-end platform allowing customer brand to own pricing, branding, marketing and sales. Wrlds can help with all aspects of
+          5 years invested into tech focused end-to-end platform allowing customer brand to own pricing, branding, marketing and sales. Tebari can help with all aspects of
           product creation, certification, initial production and app development.
         </p>
       </motion.div>
@@ -69,7 +69,7 @@ const ProductPlatform = () => {
           <ArrowRight className="text-black w-6 h-6 rotate-90" />
         </div>
 
-        {/* WRLDS Platform Column */}
+        {/* Tebari Platform Column */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ const ProductPlatform = () => {
         >
           <div className="bg-gray-200 rounded-xl p-4 sm:p-6">
             <div className="flex flex-col items-center mb-3 sm:mb-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-center mb-0">wrlds</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-center mb-0">Tebari</h3>
               <p className="text-lg sm:text-xl font-medium text-center">Platform</p>
             </div>
             

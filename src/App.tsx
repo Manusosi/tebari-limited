@@ -17,6 +17,7 @@ import DevelopmentProcess from "./pages/DevelopmentProcess";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import Blog from "./pages/Blog";
 import BlogPostDetail from "./pages/BlogPostDetail";
 import OceanCleanup from "./pages/projects/OceanCleanup";
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPostDetail />} />
             <Route path="*" element={<NotFound />} />

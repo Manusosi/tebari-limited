@@ -17,21 +17,21 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'WRLDS',
-  description = 'WRLDS Technologies: Pioneering smart engineering solutions with textile sensors for sports, safety, and performance monitoring.',
+  title = 'Tebari',
+  description = 'Tebari Limited: Transforming plastic waste into sustainable solutions, pioneering circular economy in Kenya.',
   type = 'website',
-  name = 'WRLDS Technologies',
-  imageUrl = '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
+  name = 'Tebari Limited',
+  imageUrl = '/lovable-uploads/526dc38a-25fa-40d4-b520-425b23ae0464.png',
   publishDate,
   modifiedDate,
   author,
   category,
-  keywords = ['smart textiles', 'wearable technology', 'textile sensors', 'sports tech', 'safety monitoring', 'performance analytics'],
+  keywords = ['plastic recycling', 'circular economy', 'sustainable solutions', 'waste management', 'Kenya', 'blue economy'],
   isBlogPost = false
 }) => {
   const location = useLocation();
-  const currentUrl = `https://wrlds.com${location.pathname}`;
-  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://wrlds.com${imageUrl}`;
+  const currentUrl = `https://tebari.com${location.pathname}`;
+  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://tebari.com${imageUrl}`;
 
   // Enhanced keywords for specific posts
   const enhancedKeywords = location.pathname.includes('smart-ppe-revolution') 
@@ -71,18 +71,18 @@ const SEO: React.FC<SEOProps> = ({
   const organizationStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'WRLDS Technologies',
-    url: 'https://wrlds.com',
-    logo: 'https://wrlds.com/lovable-uploads/14ea3fe0-19d6-425c-b95b-4117bc41f3ca.png',
-    description: 'Pioneering smart engineering solutions with textile sensors',
+    name: 'Tebari Limited',
+    url: 'https://tebari.com',
+    logo: 'https://tebari.com/lovable-uploads/526dc38a-25fa-40d4-b520-425b23ae0464.png',
+    description: 'Transforming plastic waste into sustainable solutions for circular economy',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'info@wrlds.com'
+      email: 'hello@tebari.co.ke'
     },
     sameAs: [
-      'https://www.linkedin.com/company/wrlds-technologies',
-      'https://twitter.com/wrldstechnologies'
+      'https://www.linkedin.com/company/tebari-limited',
+      'https://twitter.com/tebarilimited'
     ]
   };
 
@@ -105,19 +105,19 @@ const SEO: React.FC<SEOProps> = ({
     dateModified: modifiedDate || publishDate,
     author: {
       '@type': 'Organization',
-      name: author || 'WRLDS Technologies',
-      url: 'https://wrlds.com'
+      name: author || 'Tebari Limited',
+      url: 'https://tebari.com'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'WRLDS Technologies',
+      name: 'Tebari Limited',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://wrlds.com/lovable-uploads/14ea3fe0-19d6-425c-b95b-4117bc41f3ca.png',
+        url: 'https://tebari.com/lovable-uploads/526dc38a-25fa-40d4-b520-425b23ae0464.png',
         width: 512,
         height: 512
       },
-      url: 'https://wrlds.com'
+      url: 'https://tebari.com'
     },
     description: description,
     keywords: enhancedKeywords.join(', '),
@@ -211,12 +211,12 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={absoluteImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="WRLDS Technologies" />
+      <meta property="og:site_name" content="Tebari Limited" />
       <meta property="og:locale" content="en_US" />
       {isBlogPost && category && <meta property="article:section" content={category} />}
       {isBlogPost && publishDate && <meta property="article:published_time" content={publishDate} />}
       {isBlogPost && modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
-      {isBlogPost && <meta property="article:publisher" content="https://wrlds.com" />}
+      {isBlogPost && <meta property="article:publisher" content="https://tebari.com" />}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -224,8 +224,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={absoluteImageUrl} />
-      <meta name="twitter:site" content="@wrldstechnologies" />
-      <meta name="twitter:creator" content="@wrldstechnologies" />
+      <meta name="twitter:site" content="@tebarilimited" />
+      <meta name="twitter:creator" content="@tebarilimited" />
       
       {/* LinkedIn specific */}
       <meta property="og:image:secure_url" content={absoluteImageUrl} />
