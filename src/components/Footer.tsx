@@ -39,7 +39,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4 text-tebari-green">TEBARI</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/lovable-uploads/2e4ff685-7212-4b95-9338-d2a7d96500bd.png" 
+                alt="Tebari Limited Logo" 
+                className="h-8 w-8"
+              />
+              <h3 className="text-2xl font-bold text-tebari-green">TEBARI</h3>
+            </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Tebari is pioneering sustainable plastic recycling solutions in Kenya, transforming waste into valuable products while building circular economy communities.
             </p>
