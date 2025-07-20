@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -157,11 +158,9 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/contact">
-                    <NavigationMenuLink className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
-                      Contact Us
-                    </NavigationMenuLink>
-                  </Link>
+                  <button onClick={() => scrollToSection('contact')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
+                    Contact Us
+                  </button>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -221,9 +220,9 @@ const Navbar = () => {
             Careers
           </Link>
           
-          <Link to="/contact" className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-white bg-tebari-green hover:bg-tebari-green/90" : "text-white bg-tebari-green hover:bg-tebari-green/90")} onClick={() => setIsMenuOpen(false)}>
+          <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-white bg-tebari-green hover:bg-tebari-green/90" : "text-white bg-tebari-green hover:bg-tebari-green/90")}>
             Contact Us
-          </Link>
+          </button>
         </div>
       </div>
     </motion.nav>
