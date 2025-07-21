@@ -1,13 +1,25 @@
 
 import { ArrowRight, Recycle, Leaf, Users, MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
-  const { toast } = useToast();
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (showMessage) {
+      timeout = setTimeout(() => {
+        setShowMessage(false);
+      }, 5000);
+    }
+    return () => clearTimeout(timeout);
+  }, [showMessage]);
+
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -47,10 +59,7 @@ const Hero = () => {
 
   const handleShopClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    toast({
-      title: "Coming Soon",
-      description: "This feature is coming soon. Stay tuned!",
-    });
+    setShowMessage(true);
   };
   
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
@@ -73,21 +82,35 @@ const Hero = () => {
               We aggregate waste plastic and repurpose it into valuable products for a circular economy in Kenya.
             </motion.p>
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" variants={itemVariants}>
-              <button 
-                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-white text-tebari-green rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:shadow-white/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                onClick={handleShopClick}
-              >
-                Browse Shop
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <div className="relative flex flex-col items-center">
+                <button 
+                  className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-white text-tebari-green rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:shadow-white/20 flex items-center justify-center group text-sm sm:text-base font-medium"
+                  onClick={handleShopClick}
+                >
+                  Browse Shop
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <AnimatePresence>
+                  {showMessage && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full mt-2 bg-white text-tebari-green px-4 py-2 rounded-lg text-sm shadow-lg border border-tebari-green/10 max-w-[250px] mx-auto"
+                    >
+                      Don't fret! Products listing feature is coming soon!
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               
-              <button 
+              <Link
+                to="/contact"
                 className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-tebari-teal text-white rounded-lg hover:bg-tebari-teal/90 transition-all shadow-lg hover:shadow-xl hover:shadow-tebari-teal/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                onClick={scrollToContact}
               >
                 Contact Us
                 <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

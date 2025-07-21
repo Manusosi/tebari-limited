@@ -20,6 +20,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Blog from "./pages/Blog";
 import BlogPostDetail from "./pages/BlogPostDetail";
+import Contact from "./pages/Contact";
 import OceanCleanup from "./pages/projects/OceanCleanup";
 import RoadConstruction from "./pages/projects/RoadConstruction";
 import EcoPackaging from "./pages/projects/EcoPackaging";
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/projects/sustainable-textiles" element={<SustainableTextiles />} />
             <Route path="/projects/recycling-hub" element={<RecyclingHub />} />
             <Route path="/tech-details" element={<TechDetails />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/development-process" element={<DevelopmentProcess />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />

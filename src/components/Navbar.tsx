@@ -158,9 +158,11 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <button onClick={() => scrollToSection('contact')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
-                    Contact Us
-                  </button>
+                  <Link to="/contact">
+                    <button className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
+                      Contact Us
+                    </button>
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
