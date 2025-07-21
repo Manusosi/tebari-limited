@@ -11,7 +11,7 @@ type PageLayoutProps = {
   showContact?: boolean;
 };
 
-const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
+const PageLayout = ({ children, showContact = false }: PageLayoutProps) => {
   const location = useLocation();
 
   // Effect to scroll to top when route changes
