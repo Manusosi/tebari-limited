@@ -18,7 +18,7 @@ const ContactInfo = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Linus Owino's Contact Info */}
           <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
             <div className="flex flex-col items-center text-center">
@@ -61,6 +61,34 @@ const ContactInfo = () => {
                 <a href="mailto:nick@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
                   <Mail className="w-5 h-5 mr-2" />
                   nick@tebari.net
+                </a>
+                <a 
+                  href="#" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-700 hover:text-tebari-green"
+                >
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn Profile
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Cynthia Nantale's Contact Info */}
+          <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-700">
+            <div className="flex flex-col items-center text-center">
+              <img 
+                src="/lovable-uploads/cynthia-nantale-coo.png"
+                alt="Cynthia Nantale"
+                className="w-32 h-32 rounded-full mb-4 object-cover"
+              />
+              <h3 className="text-xl font-bold text-gray-900">Cynthia Nantale</h3>
+              <p className="text-gray-600 mb-4">Chief Operating Officer</p>
+              <div className="flex flex-col space-y-3">
+                <a href="mailto:cynthia@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
+                  <Mail className="w-5 h-5 mr-2" />
+                  cynthia@tebari.net
                 </a>
                 <a 
                   href="#" 
