@@ -151,7 +151,7 @@ const About = () => {
                   and business strategy to deliver comprehensive sustainability solutions.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {[
                     {
                       name: "Linus Owino",
@@ -166,6 +166,13 @@ const About = () => {
                       bio: "Overseeing operations and community partnerships to ensure sustainable impact and growth.",
                       email: "nick@tebari.net",
                       image: "/lovable-uploads/b46fb5fb-9e17-44ab-b920-b4cfe1c6fb6a.png"
+                    },
+                    {
+                      name: "Cynthia Nantale",
+                      role: "Chief Operating Officer",
+                      bio: "Driving operational excellence and strategic implementation of Tebari's plastic mapping technology initiatives.",
+                      email: "cynthia@tebari.net",
+                      image: "/lovable-uploads/cynthia-nantale-coo.png"
                     }
                   ].map((member, i) => (
                     <Card key={i} className="bg-gray-50 border border-gray-100 overflow-hidden">

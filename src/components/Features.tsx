@@ -30,8 +30,8 @@ const Features = () => {
     },
     {
       icon: <Recycle className="w-10 h-10 text-white transition-transform duration-300 transform" />,
-      title: "Sorting & Processing",
-      description: "Advanced recycling and sorting technology that efficiently processes different types of plastic waste.",
+      title: "Digital Waste Tracking",
+      description: "Real-time platform for mapping plastic waste locations and connecting recyclers with available materials.",
       image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
     },
     {
@@ -133,28 +133,28 @@ const Features = () => {
   const stepFlowItems = [{
     icon: <Microchip className="h-10 w-10 text-tebari-green" />,
     title: "Collection Network",
-    description: "Our community-based collection system across Kenya"
+    description: "Our community-based aggregation points for collecting and sorting plastic waste across Kenya"
   }, {
     icon: <Factory className="h-10 w-10 text-tebari-green" />,
-    title: "Processing Technology",
-    description: "Advanced sorting and recycling equipment and processes"
+    title: "Plastic Mapping Tech",
+    description: "We are developing a platform that maps plastic waste accumulation in real time, giving recyclers live data on available plastic for collection and allowing them to place orders for both raw and repurposed materials."
   }, {
     icon: <Handshake className="h-10 w-10 text-tebari-green" />,
     title: "Community Partners",
-    description: "Local partnerships for sustainable impact and growth"
+    description: "Strategic partnerships with local recyclers, manufacturers and communities to create a complete recycling ecosystem"
   }];
   const sprintPhases = [{
-    name: "Planning",
-    icon: <CheckCircle className="h-4 w-4" />
+    name: "Data Collection",
+    icon: <Recycle className="h-4 w-4" />
   }, {
-    name: "Development",
+    name: "Platform Build",
     icon: <Code className="h-4 w-4" />
   }, {
-    name: "Testing",
-    icon: <Box className="h-4 w-4" />
+    name: "User Testing",
+    icon: <Users className="h-4 w-4" />
   }, {
-    name: "Review",
-    icon: <RefreshCcw className="h-4 w-4" />
+    name: "Deployment",
+    icon: <Rocket className="h-4 w-4" />
   }];
 
   return <>
@@ -396,15 +396,15 @@ const Features = () => {
               <div className="max-w-3xl mx-auto">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
                   <div className="flex items-center">
-                    <h3 className="text-xl font-bold">Adaptation Project</h3>
+                    <h3 className="text-xl font-bold">Plastic Mapping Platform</h3>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-sm text-gray-500 mr-2">Iterative Development</span>
-                    <RefreshCcw className="h-5 w-5 text-gray-600 animate-rotate-slow" />
+                    <span className="text-sm text-gray-500 mr-2">Data-Driven Development</span>
+                    <Microchip className="h-5 w-5 text-gray-600 animate-rotate-slow" />
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-4">Working iteratively with customers to tailor solutions to their needs</p>
+                <p className="text-gray-600 mb-4">Building a real-time platform that connects waste collectors with recyclers for efficient resource allocation</p>
                 
                 <div className="relative mb-2">
                   <Progress value={progressValue} className="h-3 bg-gray-200" />
@@ -426,10 +426,10 @@ const Features = () => {
                     <div className="bg-green-100 rounded-full p-1 mr-2 shrink-0">
                       <CheckCircle className="h-4 w-4 text-green-600" />
                     </div>
-                    <span className="text-sm text-gray-600">Customer feedback integrated at every stage</span>
+                    <span className="text-sm text-gray-600">Real-time waste location data updates and recycler feedback</span>
                   </div>
                   <div className="text-sm text-gray-500 flex items-center mt-2 sm:mt-0">
-                    <span className="mr-2">Continuous improvement</span>
+                    <span className="mr-2">Data-driven optimization</span>
                     <div className="flex space-x-1">
                       <span className="inline-block w-2 h-2 bg-gray-300 rounded-full animate-pulse"></span>
                       <span className="inline-block w-2 h-2 bg-gray-400 rounded-full animate-pulse animation-delay-200"></span>
@@ -464,8 +464,8 @@ const Features = () => {
                   <Rocket className="h-10 w-10 text-gray-700" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Hitting the Market</h3>
-              <p className="text-gray-700">Ready to scale, produce, and launch</p>
+              <h3 className="text-xl font-bold mb-2">Platform Launch</h3>
+              <p className="text-gray-700">Connecting waste collectors and recyclers across Kenya</p>
               <div className="flex justify-center mt-4 space-x-2">
                 <span className="inline-block w-3 h-3 rounded-full bg-gray-300 animate-pulse"></span>
                 <span className="inline-block w-3 h-3 rounded-full bg-gray-500 animate-pulse animation-delay-200"></span>

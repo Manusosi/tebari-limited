@@ -10,9 +10,9 @@ const processes = [{
   steps: ["Community waste stream analysis", "Collection point optimization", "Local partnership development", "Initial pilot program setup"]
 }, {
   id: 2,
-  title: "Sorting & Processing Integration",
-  description: "Our engineering team develops and integrates advanced sorting technology to efficiently separate different plastic types while maintaining quality standards.",
-  steps: ["Plastic type identification systems", "Automated sorting technology", "Quality control processes", "Processing efficiency optimization"]
+  title: "Plastic Mapping Tech",
+  description: "Our engineering team develops a real-time platform that maps plastic waste accumulation, connecting recyclers with available materials and streamlining the supply chain.",
+  steps: ["Real-time waste tracking systems", "Recycler access portals", "Order management interfaces", "Supply chain integration tools"]
 }, {
   id: 3,
   title: "Product Development & Innovation",

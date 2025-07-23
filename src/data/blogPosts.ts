@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
         type: 'icon-list',
         items: [
           'Community Collection Networks: We work directly with coastal communities to establish collection points where plastic waste is gathered, sorted, and prepared for processing.',
-          'Advanced Processing Technology: Our sorting and processing facilities transform various types of plastic waste into high-quality raw materials for manufacturing.',
+          'Waste Mapping Platform: We are developing a real-time mapping system for plastic waste accumulation, giving recyclers live data on available plastic for collection and order placement.',
           'Product Innovation: We develop new products from recycled plastics, including construction materials, textiles, and packaging solutions.',
           'Community Empowerment: Our model creates employment opportunities and provides training to community members, ensuring sustainable economic benefits.'
         ]
@@ -160,15 +160,15 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'heading',
-        content: 'Tebari\'s Processing Technology'
+        content: 'Tebari\'s Plastic Mapping Tech'
       },
       {
         type: 'icon-list',
         items: [
-          'Advanced Sorting: Optical sorting using near-infrared spectroscopy and density separation for different plastic types.',
-          'Contamination Removal: Hot washing with specialized detergents and flotation separation for removing labels.',
-          'Mechanical Processing: Shredding into uniform flakes, melting at precisely controlled temperatures.',
-          'Quality Control: Melt flow index testing, contamination level analysis, and color consistency verification.'
+          'Live Waste Tracking: A platform that maps plastic waste accumulation in real time across different regions.',
+          'Recycler Access: Providing recyclers with immediate data on available plastic waste for efficient collection.',
+          'Order Management: Allowing recyclers to place orders for both raw and repurposed materials through the platform.',
+          'Supply Chain Integration: Connecting waste collectors, processors, and buyers in a streamlined ecosystem.'
         ]
       },
       {
@@ -256,7 +256,7 @@ export const blogPosts: BlogPost[] = [
         type: 'icon-list',
         items: [
           'Stage 1: Waste Assessment & Collection Design - Partnering with local leaders and understanding existing waste management practices.',
-          'Stage 2: Sorting & Processing Integration - Advanced technology meets community needs with optical sorting and mobile processing units.',
+          'Stage 2: Plastic Mapping Tech - Digital platform that maps plastic waste accumulation in real time and connects recyclers with available materials.',
           'Stage 3: Product Development & Innovation - Creating market-relevant products from recycled materials through extensive market research.',
           'Stage 4: Production & Quality Assurance - Scaling production while maintaining quality through manufacturing setup and quality control.',
           'Stage 5: Community Impact & Support - Ensuring sustainable long-term benefits through employment creation and ongoing support.'

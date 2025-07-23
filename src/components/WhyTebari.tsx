@@ -228,7 +228,7 @@ const WhyTebari = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">Innovative Technology</h4>
-                  <p className="text-gray-700">Advanced sorting and processing technology that maximizes recycling efficiency.</p>
+                  <p className="text-gray-700">Real-time platform mapping plastic waste accumulation, providing live data for recyclers and order placement.</p>
                 </div>
               </div>
             </motion.div>

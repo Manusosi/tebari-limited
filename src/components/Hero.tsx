@@ -133,7 +133,7 @@ const Hero = () => {
               <Leaf className="w-5 h-5 md:w-6 md:h-6" />
             </div>
             <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-gray-800">Innovative Recycling</h3>
-            <p className="text-gray-600 text-xs md:text-sm">Advanced sorting and processing technology that transforms waste into resources.</p>
+            <p className="text-gray-600 text-xs md:text-sm">Real-time mapping of plastic waste accumulation for efficient collection and recycling.</p>
           </motion.div>
           
           <motion.div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-gray-100 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md" variants={itemVariants}>
