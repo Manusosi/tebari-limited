@@ -60,7 +60,7 @@ src/
 
 ## Deployment
 
-The website is deployed and can be accessed at [https://tebari.net](https://tebari.net)
+The website is deployed and can be accessed at [https://tebari.net](https://www.tebari.net)
 
 ## Team
 
