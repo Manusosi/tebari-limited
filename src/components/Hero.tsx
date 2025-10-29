@@ -9,6 +9,26 @@ import { useState, useEffect } from "react";
 const Hero = () => {
   const isMobile = useIsMobile();
   const [showMessage, setShowMessage] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Gallery images for hero slider
+  const heroImages = [
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.49 PM.jpeg',
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM.jpeg',
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (1).jpeg',
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.48 PM.jpeg',
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.45 PM.jpeg',
+    '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (2).jpeg',
+  ];
+
+  // Auto-advance slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -65,11 +85,18 @@ const Hero = () => {
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[600px] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-            alt="Plastic recycling facility with sorting and processing equipment"
-            className="w-full h-full object-cover opacity-70"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImageIndex}
+              src={heroImages[currentImageIndex]}
+              alt="Tebari plastic recycling and collection activities"
+              className="w-full h-full object-cover opacity-70"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 0.7, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 1 }}
+            />
+          </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/70 to-white"></div>
         </div>
         

@@ -9,6 +9,9 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileLearnOpen, setMobileLearnOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +49,7 @@ const Navbar = () => {
     }}>
       <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex items-center justify-between h-16">
+          {/* Logo - Left */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
               <img 
@@ -59,9 +63,9 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <NavigationMenu className={cn(isScrolled ? "" : "text-white")}>
+          {/* Desktop Navigation - Center */}
+          <div className="hidden md:block flex-1">
+            <NavigationMenu className={cn("mx-auto", isScrolled ? "" : "text-white")}>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link to="/">
@@ -72,11 +76,25 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/about">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
-                      About Us
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
+                    About Us
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 p-4 w-[400px]">
+                      <li>
+                        <Link to="/about" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Our Story</div>
+                          <p className="text-sm text-gray-500">Learn about our mission and team</p>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/gallery" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Gallery</div>
+                          <p className="text-sm text-gray-500">View our work in action</p>
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
@@ -156,16 +174,17 @@ const Navbar = () => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/contact">
-                    <button className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
-                      Contact Us
-                    </button>
-                  </Link>
-                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+          </div>
+          
+          {/* Contact Button - Right */}
+          <div className="hidden md:block flex-shrink-0">
+            <Link to="/contact">
+              <button className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-tebari-green text-white hover:bg-tebari-green/90" : "bg-tebari-green text-white hover:bg-tebari-green/90")}>
+                Contact Us
+              </button>
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -178,8 +197,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={cn("md:hidden transition-all duration-300 overflow-hidden w-full", isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0")}>
-        <div className={cn("px-3 pt-2 pb-3 space-y-1 shadow-sm overflow-y-auto max-h-80", isScrolled ? "bg-white" : "bg-black")}>
+      <div className={cn("md:hidden transition-all duration-300 overflow-hidden w-full", isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0")}>
+        <div className={cn("px-3 pt-2 pb-3 space-y-1 shadow-sm overflow-y-auto max-h-[600px]", isScrolled ? "bg-white" : "bg-black")}>
           <Link to="/" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
@@ -187,26 +206,104 @@ const Navbar = () => {
             Home
           </Link>
           
-          <Link to="/about" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
-            About Us
-          </Link>
+          {/* About Us Dropdown */}
+          <div>
+            <button 
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
+            >
+              About Us
+              <ChevronDown className={cn("w-4 h-4 transition-transform", mobileAboutOpen && "rotate-180")} />
+            </button>
+            {mobileAboutOpen && (
+              <div className="pl-4 mt-1 space-y-1">
+                <Link to="/about" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileAboutOpen(false);
+                }}>
+                  Our Story
+                </Link>
+                <Link to="/gallery" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileAboutOpen(false);
+                }}>
+                  Gallery
+                </Link>
+              </div>
+            )}
+          </div>
           
-          <Link to="/projects/ocean-cleanup" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
-            Projects
-          </Link>
+          {/* Projects Dropdown */}
+          <div>
+            <button 
+              onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+              className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
+            >
+              Projects
+              <ChevronDown className={cn("w-4 h-4 transition-transform", mobileProjectsOpen && "rotate-180")} />
+            </button>
+            {mobileProjectsOpen && (
+              <div className="pl-4 mt-1 space-y-1">
+                <Link to="/projects/ocean-cleanup" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileProjectsOpen(false);
+                }}>
+                  Ocean Cleanup Initiative
+                </Link>
+                <Link to="/projects/road-construction" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileProjectsOpen(false);
+                }}>
+                  Recycled Road Construction
+                </Link>
+                <Link to="/projects/eco-packaging" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileProjectsOpen(false);
+                }}>
+                  Eco-Packaging Solutions
+                </Link>
+                <Link to="/projects/sustainable-textiles" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileProjectsOpen(false);
+                }}>
+                  Sustainable Fashion Textiles
+                </Link>
+                <Link to="/projects/recycling-hub" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileProjectsOpen(false);
+                }}>
+                  Community Recycling Hub
+                </Link>
+              </div>
+            )}
+          </div>
           
-          <Link to="/tech-details" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
-            Learn More
-          </Link>
+          {/* Learn More Dropdown */}
+          <div>
+            <button 
+              onClick={() => setMobileLearnOpen(!mobileLearnOpen)}
+              className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
+            >
+              Learn More
+              <ChevronDown className={cn("w-4 h-4 transition-transform", mobileLearnOpen && "rotate-180")} />
+            </button>
+            {mobileLearnOpen && (
+              <div className="pl-4 mt-1 space-y-1">
+                <Link to="/tech-details" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileLearnOpen(false);
+                }}>
+                  Recycling Technology
+                </Link>
+                <Link to="/development-process" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                  setIsMenuOpen(false);
+                  setMobileLearnOpen(false);
+                }}>
+                  Development Process
+                </Link>
+              </div>
+            )}
+          </div>
           
           <Link to="/blog" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
@@ -222,9 +319,11 @@ const Navbar = () => {
             Careers
           </Link>
           
-          <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-white bg-tebari-green hover:bg-tebari-green/90" : "text-white bg-tebari-green hover:bg-tebari-green/90")}>
+          <Link to="/contact" className={cn("block w-full text-center px-3 py-2 rounded-md text-sm mt-2", isScrolled ? "text-white bg-tebari-green hover:bg-tebari-green/90" : "text-white bg-tebari-green hover:bg-tebari-green/90")} onClick={() => {
+            setIsMenuOpen(false);
+          }}>
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
     </motion.nav>

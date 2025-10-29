@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Circular Economy',
-    imageUrl: '/lovable-uploads/63c2a3e2-053b-4365-abd3-97afbf384fdc.png',
+    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM.jpeg',
     keywords: ['circular economy', 'plastic waste', 'sustainability', 'recycling', 'Kenya'],
     metaDescription: 'Discover how Tebari Limited is transforming plastic waste management through circular economy principles in Kenya.'
   },
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Tebari Team',
     date: 'July 17, 2024',
     category: 'Technology',
-    imageUrl: '/lovable-uploads/efc70b5b-f93a-41e4-af42-fd0c98e1221d.png',
+    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (1).jpeg',
     keywords: ['plastic recycling', 'recycling technology', 'circular economy', 'sustainability', 'materials science'],
     metaDescription: 'Explore the advanced scientific processes Tebari uses to convert waste plastics into high-quality recycled materials.'
   },

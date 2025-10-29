@@ -1,69 +1,79 @@
-# Welcome to your Lovable project
+# Tebari Limited Website
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/ec1d4f1e-2506-4da5-a91b-34afa90cceb6
+This repository contains the source code for Tebari Limited's official website. Tebari Limited is a Kenyan company dedicated to transforming plastic waste into sustainable solutions while building circular economy systems that empower local communities.
 
-## How can I edit this code?
+## Core Mission
 
-There are several ways of editing your application.
+- Transform plastic waste into valuable resources
+- Build sustainable circular economy systems
+- Empower local communities in Kenya
+- Protect the environment through innovative recycling technologies
 
-**Use Lovable**
+## Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ec1d4f1e-2506-4da5-a91b-34afa90cceb6) and start prompting.
+The website is built using modern web technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **UI Components**: shadcn-ui
+- **Styling**: Tailwind CSS
+- **Motion**: Framer Motion
+- **SEO**: React Helmet
+- **Analytics**: Google Tag Manager
 
-**Use your preferred IDE**
+## Key Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Responsive design optimized for all devices
+- SEO optimization with meta tags and structured data
+- Dynamic page transitions and animations
+- Cookie consent management
+- Blog system for company updates
+- Career opportunities section
+- Project showcase
+- Team member profiles
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+  ├── components/    # Reusable UI components
+  ├── pages/        # Page components and routes
+  ├── data/         # Static data and content
+  ├── hooks/        # Custom React hooks
+  ├── lib/          # Utility functions and helpers
+  └── App.tsx       # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## Development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The website is deployed and can be accessed at [https://tebari.net](https://tebari.net)
 
-## What technologies are used for this project?
+## Team
 
-This project is built with .
+- Linus Owino (Co-founder) - linus@tebari.net
+- Nicholas Okeyo (Co-founder) - nick@tebari.net
+- Cynthia Nantale (Chief Operating Officer) - cynthia@tebari.net
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contact
 
-## How can I deploy this project?
+For general inquiries:
+- Email: info@tebari.net
+- Website: https://tebari.net
 
-Simply open [Lovable](https://lovable.dev/projects/ec1d4f1e-2506-4da5-a91b-34afa90cceb6) and click on Share -> Publish.
+## License
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+All rights reserved © 2025 Tebari Limited

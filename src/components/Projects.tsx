@@ -13,7 +13,7 @@ const Projects = () => {
       title: "Ocean Cleanup Initiative",
       subtitle: "Coastal plastic collection and community engagement",
       description: "Our flagship program collecting plastic waste from Kenya's coastlines while empowering local communities through education and economic opportunities.",
-      image: "/lovable-uploads/c36c5f79-80b1-4aca-afdb-63d1e60649c1.png",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.49 PM.jpeg",
       slug: "ocean-cleanup",
       icon: <Recycle className="w-6 h-6" />,
       tag: "FEATURED"
