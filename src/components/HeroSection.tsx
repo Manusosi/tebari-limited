@@ -16,7 +16,7 @@ const HeroSection = ({
   title,
   subtitle,
   backgroundImage,
-  backgroundGradient = 'from-tebari-green to-gray-900',
+  backgroundGradient = 'bg-black/40',
   children,
   className = '',
   textColor = 'white',
@@ -36,17 +36,17 @@ const HeroSection = ({
       {/* Background */}
       {backgroundImage ? (
         <div className="absolute inset-0">
-          <img 
+          <img
             src={backgroundImage}
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className={`absolute inset-0 bg-gradient-to-b ${backgroundGradient} opacity-80`}></div>
+          <div className={`absolute inset-0 ${backgroundGradient}`}></div>
         </div>
       ) : (
-        <div className={`absolute inset-0 bg-gradient-to-b ${backgroundGradient}`}></div>
+        <div className={`absolute inset-0 ${backgroundGradient}`}></div>
       )}
-      
+
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

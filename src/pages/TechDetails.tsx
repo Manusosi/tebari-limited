@@ -63,24 +63,24 @@ const TechDetails = () => {
 
   return (
     <PageLayout>
-      <SEO 
+      <SEO
         title="Recycling Technology - Tebari Limited"
         description="Learn about Tebari's advanced plastic recycling technology and processes that transform waste into valuable materials."
         keywords={['plastic recycling technology', 'waste processing', 'circular economy', 'sustainable manufacturing']}
       />
-      
+
       {/* Hero Section */}
       <div className="pt-16">
         <div className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green to-gray-900"></div>
-          
+          <div className="absolute inset-0 bg-black/40"></div>
+
           <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ const TechDetails = () => {
               >
                 Advanced Recycling Technology
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed text-gray-200"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

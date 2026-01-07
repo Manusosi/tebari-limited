@@ -31,7 +31,7 @@ const BlogPostDetail = () => {
 
   return (
     <PageLayout>
-      <SEO 
+      <SEO
         title={`${post.title} - Tebari Limited`}
         description={post.metaDescription || post.excerpt}
         imageUrl={post.imageUrl}
@@ -42,19 +42,19 @@ const BlogPostDetail = () => {
         category={post.category}
         type="article"
       />
-      
+
       <article className="w-full pt-16 pb-16">
         {/* Hero Section */}
         <div className="banner-container h-96 sm:h-[450px] md:h-[500px] lg:h-[550px] relative">
           {post.imageUrl && (
-            <img 
-              src={post.imageUrl} 
+            <img
+              src={post.imageUrl}
               alt={post.title}
-              className="absolute inset-0 w-full h-full object-cover filter grayscale"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 via-tebari-green/60 to-black/80"></div>
-          
+          <div className="absolute inset-0 bg-black/40"></div>
+
           <div className="banner-overlay">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-start md:justify-center">
               <div className="w-full max-w-4xl mx-auto text-left md:text-center">
@@ -62,11 +62,11 @@ const BlogPostDetail = () => {
                   <ArrowLeft className="mr-2 h-3 w-3" />
                   Back to Blog
                 </Link>
-                
+
                 <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight break-words max-w-full">
                   {post.title}
                 </h1>
-                
+
                 <div className="flex flex-col gap-3 text-gray-300 mb-4 sm:mb-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start md:justify-center gap-2 sm:gap-6">
                     <div className="flex items-center text-xs sm:text-base">
@@ -78,14 +78,14 @@ const BlogPostDetail = () => {
                       <span>{post.author}</span>
                     </div>
                   </div>
-                  
+
                   <div className="flex justify-start md:justify-center">
                     <div className="px-3 py-1 sm:px-4 sm:py-2 bg-white/15 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium border border-white/20">
                       {post.category}
                     </div>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-200 text-sm sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
                   {post.excerpt}
                 </p>

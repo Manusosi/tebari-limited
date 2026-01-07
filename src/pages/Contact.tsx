@@ -48,32 +48,32 @@ const Contact = () => {
         <div className="pt-16">
           <div className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
                 alt="Contact Tebari Limited - Get in Touch"
-                className="w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 to-white/20"></div>
+              <div className="absolute inset-0 bg-black/40"></div>
             </div>
             <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
               </Link>
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6 }} 
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
               >
                 Get in Touch
               </motion.h1>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.6, delay: 0.2 }} 
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed text-gray-200"
               >
                 Have questions about our sustainable solutions? We're here to help and would love to hear from you.
@@ -93,7 +93,7 @@ const Contact = () => {
                   <Input
                     id="name"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     placeholder="Your name"
                   />
@@ -104,7 +104,7 @@ const Contact = () => {
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     placeholder="your.email@example.com"
                   />
@@ -113,7 +113,7 @@ const Contact = () => {
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
                   <Select
                     value={formData.subject}
-                    onValueChange={(value) => setFormData({...formData, subject: value as typeof subjects[number]})}
+                    onValueChange={(value) => setFormData({ ...formData, subject: value as typeof subjects[number] })}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select a subject" />
@@ -132,7 +132,7 @@ const Contact = () => {
                   <Textarea
                     id="message"
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     placeholder="Your message"
                     className="min-h-[150px]"

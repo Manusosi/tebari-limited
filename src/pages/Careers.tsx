@@ -1,4 +1,4 @@
-import PageLayout from '@/components/PageLayout';
+﻿import PageLayout from '@/components/PageLayout';
 import { ArrowLeft, Mail, Linkedin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
@@ -81,9 +81,9 @@ const Careers = () => {
                           <h3 className="text-xl font-bold text-gray-900">Linus Owino</h3>
                           <p className="text-gray-600 mb-4">Co-founder</p>
                           <div className="flex flex-col space-y-3">
-                            <a href="mailto:linus@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
+                            <a href="mailto:linus.o@tebari.net" className="flex items-center text-gray-700 hover:text-tebari-green">
                               <Mail className="w-5 h-5 mr-2" />
-                              linus@tebari.net
+                              linus.o@tebari.net
                             </a>
                           </div>
                         </div>

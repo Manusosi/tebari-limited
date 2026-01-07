@@ -32,9 +32,9 @@ const Gallery = () => {
             <img
               src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
               alt="Tebari Gallery - Our Work in Action"
-              className="w-full h-full object-cover opacity-70"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-tebari-green/80 to-white/20"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
           <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors">

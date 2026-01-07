@@ -1,4 +1,4 @@
-# Tebari Limited Website
+﻿# Tebari Limited Website
 
 ## About
 
@@ -38,12 +38,12 @@ The website is built using modern web technologies:
 
 ```
 src/
-  ├── components/    # Reusable UI components
-  ├── pages/        # Page components and routes
-  ├── data/         # Static data and content
-  ├── hooks/        # Custom React hooks
-  ├── lib/          # Utility functions and helpers
-  └── App.tsx       # Main application component
+  â”œâ”€â”€ components/    # Reusable UI components
+  â”œâ”€â”€ pages/        # Page components and routes
+  â”œâ”€â”€ data/         # Static data and content
+  â”œâ”€â”€ hooks/        # Custom React hooks
+  â”œâ”€â”€ lib/          # Utility functions and helpers
+  â””â”€â”€ App.tsx       # Main application component
 ```
 
 ## Development
@@ -64,7 +64,7 @@ The website is deployed and can be accessed at [https://tebari.net](https://www.
 
 ## Team
 
-- Linus Owino (Co-founder) - linus@tebari.net
+- Linus Owino (Co-founder) - linus.o@tebari.net
 - Nicholas Okeyo (Co-founder) - nick@tebari.net
 - Cynthia Nantale (Chief Operating Officer) - cynthia@tebari.net
 
@@ -76,4 +76,4 @@ For general inquiries:
 
 ## License
 
-All rights reserved © 2025 Tebari Limited
+All rights reserved Â© 2025 Tebari Limited

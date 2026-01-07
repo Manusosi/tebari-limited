@@ -26,47 +26,47 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const bgColor = darkMode ? 'bg-[#0c151c]' : 'bg-gray-100';
   const textColor = darkMode ? 'text-white' : 'text-gray-900';
-  
+
   return (
     <PageLayout>
       <div className="pt-16 pb-16">
         {/* Hero Section */}
-        <div 
+        <div
           className={`relative w-full h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center`}
         >
           {/* Background Image with Overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center" 
+          <div
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${imageUrl})` }}
           ></div>
-          <div className={`absolute inset-0 ${darkMode ? 'bg-black/70' : 'bg-white/70'}`}></div>
-          
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-10">
-            <motion.div 
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-10 text-white">
+            <motion.div
               className="flex flex-col items-center justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.h1 
-                className={`text-4xl md:text-5xl font-bold mb-4 text-center ${textColor}`}
+              <motion.h1
+                className={`text-4xl md:text-5xl font-bold mb-4 text-center text-white`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 {title}
               </motion.h1>
-              <motion.div 
-                className={`w-20 h-1 ${darkMode ? 'bg-white' : 'bg-gray-800'} mb-6`}
+              <motion.div
+                className={`w-20 h-1 bg-white mb-6`}
                 initial={{ width: 0 }}
                 animate={{ width: 80 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               />
-              <motion.p 
-                className={`text-xl text-center max-w-2xl ${darkMode ? 'text-white' : 'text-gray-700'}`}
+              <motion.p
+                className={`text-xl text-center max-w-2xl text-white`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -76,7 +76,7 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             </motion.div>
           </div>
         </div>
-        
+
         {/* Back Button */}
         <div className="w-full max-w-4xl mx-auto px-6 md:px-8 mt-8">
           <Link to="/#projects" className="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors">
@@ -84,10 +84,10 @@ const ProjectPageLayout: React.FC<ProjectPageLayoutProps> = ({
             <span>Back to Projects</span>
           </Link>
         </div>
-        
+
         {/* Case Study Content */}
         <div className="w-full max-w-4xl mx-auto px-6 md:px-8 py-12">
-          <motion.div 
+          <motion.div
             className="prose prose-lg max-w-none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
