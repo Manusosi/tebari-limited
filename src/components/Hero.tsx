@@ -129,10 +129,10 @@ const Hero = () => {
               </a>
 
               <Link
-                to="/projects"
+                to="/about"
                 className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all shadow-lg flex items-center justify-center group text-sm sm:text-base font-medium"
               >
-                See What We Do
+                Learn More
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
