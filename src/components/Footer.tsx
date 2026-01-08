@@ -40,9 +40,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/lovable-uploads/2e4ff685-7212-4b95-9338-d2a7d96500bd.png" 
-                alt="Tebari Limited Logo" 
+              <img
+                src="/lovable-uploads/2e4ff685-7212-4b95-9338-d2a7d96500bd.png"
+                alt="Tebari Limited Logo"
                 className="h-8 w-8"
               />
               <h3 className="text-2xl font-bold text-tebari-green">TEBARI</h3>
@@ -67,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/projects/ocean-cleanup" className="text-gray-300 hover:text-tebari-green transition-colors">
-                  Our Projects
+                  Products & Services
                 </Link>
               </li>
               <li>
@@ -106,7 +106,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
             <p className="text-gray-300 mb-4 text-sm">
-              Stay updated with our latest recycling innovations and projects.
+              Stay updated with our latest recycling innovations and products.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-2">
               <input
@@ -146,9 +146,9 @@ const Footer = () => {
               </div>
               <div className="text-sm text-gray-400">
                 Built by{" "}
-                <a 
-                  href="https://portfolio.kazinikazi.co.ke/" 
-                  target="_blank" 
+                <a
+                  href="https://portfolio.kazinikazi.co.ke/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-tebari-green hover:text-tebari-green/80 transition-colors"
                 >

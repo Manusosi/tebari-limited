@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileLearnOpen, setMobileLearnOpen] = useState(false);
 
   useEffect(() => {
@@ -52,9 +52,9 @@ const Navbar = () => {
           {/* Logo - Left */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/2e4ff685-7212-4b95-9338-d2a7d96500bd.png" 
-                alt="Tebari Limited Logo" 
+              <img
+                src="/lovable-uploads/2e4ff685-7212-4b95-9338-d2a7d96500bd.png"
+                alt="Tebari Limited Logo"
                 className="h-10 w-10 sm:h-12 sm:w-12"
               />
               <span className={cn("text-xl sm:text-2xl font-bold transition-colors", isScrolled ? "text-tebari-green" : "text-white")}>
@@ -62,7 +62,7 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
-          
+
           {/* Desktop Navigation - Center */}
           <div className="hidden md:block flex-1">
             <NavigationMenu className={cn("mx-auto", isScrolled ? "" : "text-white")}>
@@ -74,7 +74,7 @@ const Navbar = () => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
                     About Us
@@ -96,10 +96,10 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
-                    Projects
+                    Products & Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
@@ -136,7 +136,7 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
                     Learn More
@@ -158,7 +158,7 @@ const Navbar = () => {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <Link to="/blog">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
@@ -166,7 +166,7 @@ const Navbar = () => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <Link to="/careers">
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
@@ -177,7 +177,7 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          
+
           {/* Contact Button - Right */}
           <div className="hidden md:block flex-shrink-0">
             <Link to="/contact">
@@ -186,7 +186,7 @@ const Navbar = () => {
               </button>
             </Link>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button onClick={toggleMenu} className={cn("focus:outline-none", isScrolled ? "text-gray-700" : "text-white")}>
@@ -205,10 +205,10 @@ const Navbar = () => {
           }}>
             Home
           </Link>
-          
+
           {/* About Us Dropdown */}
           <div>
-            <button 
+            <button
               onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
             >
@@ -232,55 +232,55 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          
+
           {/* Projects Dropdown */}
           <div>
-            <button 
-              onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+            <button
+              onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
               className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
             >
-              Projects
-              <ChevronDown className={cn("w-4 h-4 transition-transform", mobileProjectsOpen && "rotate-180")} />
+              Products & Services
+              <ChevronDown className={cn("w-4 h-4 transition-transform", mobileProductsOpen && "rotate-180")} />
             </button>
-            {mobileProjectsOpen && (
+            {mobileProductsOpen && (
               <div className="pl-4 mt-1 space-y-1">
                 <Link to="/projects/ocean-cleanup" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
-                  setMobileProjectsOpen(false);
+                  setMobileProductsOpen(false);
                 }}>
                   Ocean Cleanup Initiative
                 </Link>
                 <Link to="/projects/road-construction" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
-                  setMobileProjectsOpen(false);
+                  setMobileProductsOpen(false);
                 }}>
                   Recycled Road Construction
                 </Link>
                 <Link to="/projects/eco-packaging" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
-                  setMobileProjectsOpen(false);
+                  setMobileProductsOpen(false);
                 }}>
                   Eco-Packaging Solutions
                 </Link>
                 <Link to="/projects/sustainable-textiles" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
-                  setMobileProjectsOpen(false);
+                  setMobileProductsOpen(false);
                 }}>
                   Sustainable Fashion Textiles
                 </Link>
                 <Link to="/projects/recycling-hub" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
-                  setMobileProjectsOpen(false);
+                  setMobileProductsOpen(false);
                 }}>
                   Community Recycling Hub
                 </Link>
               </div>
             )}
           </div>
-          
+
           {/* Learn More Dropdown */}
           <div>
-            <button 
+            <button
               onClick={() => setMobileLearnOpen(!mobileLearnOpen)}
               className={cn("flex items-center justify-between w-full px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}
             >
@@ -304,21 +304,21 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          
+
           <Link to="/blog" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
           }}>
             Blog
           </Link>
-          
+
           <Link to="/careers" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
           }}>
             Careers
           </Link>
-          
+
           <Link to="/contact" className={cn("block w-full text-center px-3 py-2 rounded-md text-sm mt-2", isScrolled ? "text-white bg-tebari-green hover:bg-tebari-green/90" : "text-white bg-tebari-green hover:bg-tebari-green/90")} onClick={() => {
             setIsMenuOpen(false);
           }}>

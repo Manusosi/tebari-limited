@@ -169,7 +169,7 @@ const WhyTebari = () => {
         </motion.div>
 
         <motion.div
-          className="mb-12"
+          className="mb-12 relative py-16 px-4 sm:px-8 rounded-3xl overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{
@@ -178,87 +178,97 @@ const WhyTebari = () => {
           }}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              What Tebari Does for You
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We transform plastic waste into valuable products while creating sustainable economic opportunities for communities
-            </p>
-          </motion.div>
+          {/* Sticky Background with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-fixed"
+              style={{ backgroundImage: 'url("/gallery/plastic-collection/aboutfour.jpeg")' }}
+            ></div>
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+          </div>
 
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <div className="flex items-start">
-                <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <BarChart className="w-6 h-6 text-gray-700" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Sustainable Products</h4>
-                  <p className="text-gray-700">Create high-quality recycled products that generate revenue and reduce environmental impact.</p>
-                </div>
-              </div>
+          <div className="relative z-10">
+            <motion.div variants={itemVariants} className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                What Tebari Does for You
+              </h3>
+              <p className="text-gray-200 text-lg max-w-2xl mx-auto">
+                We transform plastic waste into valuable products while creating sustainable economic opportunities for communities
+              </p>
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <div className="flex items-start">
-                <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <Sparkles className="w-6 h-6 text-gray-700" />
+            <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                variants={itemVariants}
+                className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all group"
+              >
+                <div className="flex items-start">
+                  <div className="bg-tebari-green/20 rounded-full p-3 mr-4 group-hover:bg-tebari-green/40 transition-colors">
+                    <BarChart className="w-6 h-6 text-tebari-green" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-2">Sustainable Products</h4>
+                    <p className="text-gray-100">Create high-quality recycled products that generate revenue and reduce environmental impact.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Community Empowerment</h4>
-                  <p className="text-gray-700">Build circular economy systems that create jobs and empower local communities.</p>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all group"
+              >
+                <div className="flex items-start">
+                  <div className="bg-tebari-teal/20 rounded-full p-3 mr-4 group-hover:bg-tebari-teal/40 transition-colors">
+                    <Sparkles className="w-6 h-6 text-tebari-teal" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-2">Community Empowerment</h4>
+                    <p className="text-gray-100">Build circular economy systems that create jobs and empower local communities.</p>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all group"
+              >
+                <div className="flex items-start">
+                  <div className="bg-tebari-green/20 rounded-full p-3 mr-4 group-hover:bg-tebari-green/40 transition-colors">
+                    <Zap className="w-6 h-6 text-tebari-green" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-2">Innovative Technology</h4>
+                    <p className="text-gray-100">Our tebari.cloud platform maps plastic waste accumulation via GPS, providing live data for field officers and recyclers alike.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all group"
+              >
+                <div className="flex items-start">
+                  <div className="bg-tebari-teal/20 rounded-full p-3 mr-4 group-hover:bg-tebari-teal/40 transition-colors">
+                    <Rocket className="w-6 h-6 text-tebari-teal" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-2">Environmental Impact</h4>
+                    <p className="text-gray-100">Measurable environmental benefits through plastic waste reduction and ocean cleanup.</p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <div className="flex items-start">
-                <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <Zap className="w-6 h-6 text-gray-700" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Innovative Technology</h4>
-                  <p className="text-gray-700">Real-time platform mapping plastic waste accumulation, providing live data for recyclers and order placement.</p>
-                </div>
-              </div>
+            <motion.div variants={itemVariants} className="text-center mt-12">
+              <Link
+                to="/development-process"
+                className="inline-flex items-center px-6 py-3 bg-white text-tebari-green font-semibold rounded-lg hover:bg-gray-100 transition-all group shadow-lg"
+              >
+                Learn more about our sustainable development process
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <div className="flex items-start">
-                <div className="bg-gray-200 rounded-full p-3 mr-4">
-                  <Rocket className="w-6 h-6 text-gray-700" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Environmental Impact</h4>
-                  <p className="text-gray-700">Measurable environmental benefits through plastic waste reduction and ocean cleanup.</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="text-center mt-10">
-            <Link
-              to="/development-process"
-              onClick={() => window.scrollTo(0, 0)}
-              className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group"
-            >
-              Learn more about our sustainable development process
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

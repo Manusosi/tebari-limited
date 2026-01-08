@@ -23,7 +23,7 @@ const Projects = () => {
       title: "Recycled Road Construction",
       subtitle: "Innovative infrastructure using recycled plastics",
       description: "Converting plastic waste into durable construction materials for roads and infrastructure projects across Kenya.",
-      image: "/lovable-uploads/6d0d50e5-2bce-4948-8493-4ff1bdf7132d.png",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.45 PM (1).jpeg",
       slug: "road-construction",
       icon: <Building className="w-6 h-6" />
     },
@@ -59,7 +59,7 @@ const Projects = () => {
   // Auto-advance carousel
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentProject((prev) => (prev + 1) % projects.length);
     }, 5000);
@@ -93,10 +93,10 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Our Impact Projects
+            Products & Services
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Discover how we're transforming plastic waste into sustainable solutions across different sectors
+            Explore our range of sustainable products and environmental services designed for a circular economy
           </p>
         </motion.div>
 
@@ -136,7 +136,7 @@ const Projects = () => {
                           {project.icon}
                         </div>
                         <span className="text-tebari-green font-medium text-sm">
-                          Project {project.id}
+                          Item {project.id}
                         </span>
                       </div>
 
@@ -187,11 +187,10 @@ const Projects = () => {
               <button
                 key={index}
                 onClick={() => goToProject(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentProject
-                    ? "bg-tebari-green scale-125"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentProject
+                  ? "bg-tebari-green scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to project ${index + 1}`}
               />
             ))}

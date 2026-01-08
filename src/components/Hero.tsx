@@ -19,7 +19,7 @@ const Hero = () => {
     '/gallery/plastic-collection/aboutfour.jpeg',
     '/gallery/plastic-collection/aboutfive.jpeg',
     '/gallery/plastic-collection/aboutsix.jpeg',
-    '/gallery/plastic-collection/aboutseve..jpeg',
+    '/gallery/plastic-collection/aboutseve..jpeg', // Keep as is since file exists with this name
   ];
 
   // Auto-advance slider
@@ -85,20 +85,29 @@ const Hero = () => {
 
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
     <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[600px] min-h-[500px] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
-          <motion.img
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence initial={false}>
+          <motion.div
             key={currentImageIndex}
-            src={heroImages[currentImageIndex]}
-            alt="Tebari plastic recycling and collection activities"
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 2 }}
-          />
+            className="absolute inset-0"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{
+              duration: 2.5,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+          >
+            <img
+              src={heroImages[currentImageIndex]}
+              alt="Tebari plastic recycling and collection activities"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </AnimatePresence>
 
+        {/* Unified Black Overlay for visibility */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -110,35 +119,23 @@ const Hero = () => {
             We aggregate waste plastic and repurpose it into valuable products for a circular economy in Kenya.
           </motion.p>
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" variants={itemVariants}>
-            <div className="relative flex flex-col items-center">
-              <button
-                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-white text-tebari-green rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:shadow-white/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                onClick={handleShopClick}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+              <a
+                href="mailto:linus.o@tebari.net?subject=Product%20Demo%20Request"
+                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-tebari-teal text-white rounded-lg hover:bg-tebari-teal/90 transition-all shadow-lg hover:shadow-xl hover:shadow-tebari-teal/20 flex items-center justify-center group text-sm sm:text-base font-medium"
               >
-                Browse Shop
+                Request Product Demo
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <AnimatePresence>
-                {showMessage && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full mt-2 bg-white text-tebari-green px-4 py-2 rounded-lg text-sm shadow-lg border border-tebari-green/10 max-w-[250px] mx-auto"
-                  >
-                    Don't fret! Products listing feature is coming soon!
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              </a>
 
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-tebari-teal text-white rounded-lg hover:bg-tebari-teal/90 transition-all shadow-lg hover:shadow-xl hover:shadow-tebari-teal/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-            >
-              Contact Us
-              <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-            </Link>
+              <Link
+                to="/projects"
+                className="w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all shadow-lg flex items-center justify-center group text-sm sm:text-base font-medium"
+              >
+                See What We Do
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
       </div>

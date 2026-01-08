@@ -8,7 +8,7 @@ const BlogPreview = () => {
       id: 1,
       title: "Circular Plastic Economy: Rethinking Waste Management",
       excerpt: "Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development.",
-      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM.jpeg",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.49 PM (2).jpeg",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "circular-plastic-economy"
@@ -17,7 +17,7 @@ const BlogPreview = () => {
       id: 2,
       title: "Turning Ocean Waste into Opportunity: Innovations in Cleanup",
       excerpt: "How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products.",
-      image: "/lovable-uploads/3d9b4ab1-4b93-49d1-a762-4b852a76c4b8.png",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM (1).jpeg",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "ocean-waste-opportunity"
@@ -26,7 +26,7 @@ const BlogPreview = () => {
       id: 3,
       title: "The Science of Recycling: Converting Plastics into New Materials",
       excerpt: "Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.",
-      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (1).jpeg",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (2).jpeg",
       date: "July 17, 2024",
       author: "Tebari Team",
       slug: "science-of-recycling"
@@ -68,7 +68,7 @@ const BlogPreview = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              
+
               <div className="p-6">
                 <div className="flex items-center text-sm text-gray-500 mb-3">
                   <Calendar className="w-4 h-4 mr-2" />
@@ -77,15 +77,15 @@ const BlogPreview = () => {
                   <User className="w-4 h-4 mr-2" />
                   <span>{post.author}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                   {post.title}
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
+
                 <Link
                   to={`/blog/${post.slug}`}
                   className="inline-flex items-center text-tebari-green hover:text-tebari-green/80 font-medium transition-colors group"
