@@ -8,8 +8,8 @@ const BlogPreview = () => {
       id: 1,
       title: "Circular Plastic Economy: Rethinking Waste Management",
       excerpt: "Exploring how circular economy principles can transform plastic waste from a problem into a resource for sustainable development.",
-      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.49 PM (2).jpeg",
-      date: "July 17, 2024",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-12-30 at 3.47.49 PM.jpeg",
+      date: "December 18, 2025",
       author: "Tebari Team",
       slug: "circular-plastic-economy"
     },
@@ -18,7 +18,7 @@ const BlogPreview = () => {
       title: "Turning Ocean Waste into Opportunity: Innovations in Cleanup",
       excerpt: "How innovative cleanup technologies and community partnerships are transforming ocean plastic waste into valuable products.",
       image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM (1).jpeg",
-      date: "July 17, 2024",
+      date: "December 20, 2025",
       author: "Tebari Team",
       slug: "ocean-waste-opportunity"
     },
@@ -26,8 +26,8 @@ const BlogPreview = () => {
       id: 3,
       title: "The Science of Recycling: Converting Plastics into New Materials",
       excerpt: "Deep dive into the technical processes behind converting waste plastics into high-quality recycled materials for various applications.",
-      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (2).jpeg",
-      date: "July 17, 2024",
+      image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.45 PM.jpeg",
+      date: "December 22, 2025",
       author: "Tebari Team",
       slug: "science-of-recycling"
     }

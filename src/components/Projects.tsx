@@ -20,11 +20,11 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Recycled Road Construction",
-      subtitle: "Innovative infrastructure using recycled plastics",
-      description: "Converting plastic waste into durable construction materials for roads and infrastructure projects across Kenya.",
+      title: "Recycled Construction Materials",
+      subtitle: "Sustainable building solutions from plastic waste",
+      description: "Converting plastic waste into durable construction materials for high-quality sustainable infrastructure and building projects.",
       image: "/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.45 PM (1).jpeg",
-      slug: "road-construction",
+      slug: "construction-materials",
       icon: <Building className="w-6 h-6" />
     },
     {

@@ -77,9 +77,9 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 18, 2025',
     category: 'Circular Economy',
-    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.47 PM.jpeg',
+    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-12-30 at 3.47.49 PM.jpeg',
     keywords: ['circular economy', 'plastic waste', 'sustainability', 'recycling', 'Kenya'],
     metaDescription: 'Discover how Tebari Limited is transforming plastic waste management through circular economy principles in Kenya.'
   },
@@ -127,7 +127,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 20, 2025',
     category: 'Ocean Cleanup',
     imageUrl: '/lovable-uploads/3d9b4ab1-4b93-49d1-a762-4b852a76c4b8.png',
     keywords: ['ocean cleanup', 'marine plastic', 'coastal communities', 'recycling', 'sustainability'],
@@ -181,9 +181,9 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 22, 2025',
     category: 'Technology',
-    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.46 PM (1).jpeg',
+    imageUrl: '/gallery/plastic-collection/WhatsApp Image 2025-10-28 at 6.33.45 PM.jpeg',
     keywords: ['plastic recycling', 'recycling technology', 'circular economy', 'sustainability', 'materials science'],
     metaDescription: 'Explore the advanced scientific processes Tebari uses to convert waste plastics into high-quality recycled materials.'
   },
@@ -232,7 +232,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 25, 2025',
     category: 'Industry Solutions',
     imageUrl: '/lovable-uploads/90e451d3-3516-43ec-90cc-cb92ba544302.png',
     keywords: ['industrial recycling', 'recycling technology', 'waste management', 'circular economy', 'sustainability'],
@@ -280,7 +280,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 28, 2025',
     category: 'Development Process',
     imageUrl: '/lovable-uploads/644f9f2a-9d26-428f-bead-914bf3d45fe7.png',
     keywords: ['sustainable development', 'plastic recycling', 'community development', 'circular economy', 'product development'],
@@ -343,7 +343,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     author: 'Tebari Team',
-    date: 'July 17, 2024',
+    date: 'December 30, 2025',
     category: 'Blue Economy',
     imageUrl: '/lovable-uploads/faed02d3-6f87-4c72-bb77-520aa4c1182e.png',
     keywords: ['blue economy', 'sustainable development', 'ocean conservation', 'marine pollution', 'circular economy'],

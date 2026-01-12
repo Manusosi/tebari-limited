@@ -110,8 +110,8 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/projects/road-construction" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Recycled Road Construction</div>
+                        <Link to="/projects/construction-materials" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Recycled Construction Materials</div>
                           <p className="text-sm text-gray-500">Plastic-based building materials</p>
                         </Link>
                       </li>
@@ -250,11 +250,11 @@ const Navbar = () => {
                 }}>
                   Ocean Cleanup Initiative
                 </Link>
-                <Link to="/projects/road-construction" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
+                <Link to="/projects/construction-materials" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
                   setMobileProductsOpen(false);
                 }}>
-                  Recycled Road Construction
+                  Recycled Construction Materials
                 </Link>
                 <Link to="/projects/eco-packaging" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-600 hover:bg-gray-50" : "text-gray-300 hover:bg-gray-900")} onClick={() => {
                   setIsMenuOpen(false);
